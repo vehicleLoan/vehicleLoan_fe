@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
+  
+  * {
+    box-sizing: inherit;
+    text-align: center;
+  }
+
+  fieldset {
+    border: .5em solid lighten(deepskyblue, 30%);
+    border-radius: .2em;
+    max-width: 400px;
+    margin: 3em auto;
+    padding: 1em;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-top: 0;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: .5em;
+    cursor: pointer;
+    font-family: 'Poppins',sans-serif;
+  }
+  
+  input[type="range"] {
+    overflow: hidden;
+    display: block;
+    width: 95%;
+    padding: .5em;
+    transition: .5s ease-out; 
+    border: solid 1px orangered;
+    background-color: orangered;
+  
+  }
+  
+  button {
+    display: block;
+    border: none;
+    outline: none;
+    padding: 1em;
+    width: 95%;
+    font-weight: bold;
+    color: white;
+    background:  orangered;
+    text-transform: uppercase;
+    font-size: .8em;
+    transition: .15s ease-out;
+    
+  }
+  
+   .calcemi{
+       border-radius: 12px;
+   }
+
+  .calcemi:hover{
+     background: orange;
+  }
+  
+  p:last-of-type {
+    margin-bottom: 0;
+  }

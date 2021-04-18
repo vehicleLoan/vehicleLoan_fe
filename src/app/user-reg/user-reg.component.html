@@ -1,0 +1,46 @@
+<h2 style="text-align: center;">User Registration Form</h2>
+
+<form (ngSubmit)="submit()">
+    First Name:
+    <input type="text" name="uname" #nm="ngModel" minlength="3" placeholder="Enter first Name" required [(ngModel)]="userdto.custFirstName"/>
+    <div *ngIf="nm.invalid && nm.dirty " style="color:red;border-color:red;">
+      <div *ngIf=nm.errors.required>First Name is required</div>
+      <div *ngIf=nm.errors.minlength>First Name must contain at least 3 characters</div>
+    </div><br>
+
+    Number:
+    <input type="text" name="uphone" #mb="ngModel" pattern="^[6-9]\d{9}$" placeholder="Enter Mobile No" required [(ngModel)]="userdto.phone"/>
+    <div *ngIf="mb.invalid && mb.dirty " style="color:red;border-color:red;">
+      <div *ngIf=mb.errors.required>Phone Number is required</div>
+      <div *ngIf=mb.errors.pattern>Phone number is invalid</div>
+    </div><br>
+
+    Email:
+    <input type="email" #em="ngModel" name="uemail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Enter Email" required [(ngModel)]="userdto.email"/>
+    <div *ngIf="em.invalid && em.dirty " style="color:red;border-color:red;">
+      <div *ngIf=em.errors.required>Email is required</div>
+      <div *ngIf=em.errors.pattern>Email is invalid</div>
+    </div><br>
+  
+
+    Password:
+    <input type="password" #pwd="ngModel" 
+    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+    name="upass" placeholder="Enter Password" required [(ngModel)]="userdto.password"/>
+    <div *ngIf="pwd.invalid && pwd.dirty " style="color:red;border-color:red;">
+      <div *ngIf=pwd.errors.required>Password is required</div>
+      <div *ngIf=pwd.errors.pattern>Password is invalid</div>
+    </div><br>
+
+    <!-- Confirm Password:
+    <input type="password" #pwd1="ngModel"  ngValidateEqual="upass"
+    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
+    name="cpass" placeholder="Re-enter Password" required [(ngModel)]="user.confirmPassword"/><br>
+    <div *ngIf="pwd1.invalid && pwd1.dirty" style="color:red;border-color:red;">
+      <div *ngIf=pwd1.errors.required>Password is required</div>
+      <div *ngIf="pwd1.hasError('notEqual') && pwd.valid">Password is not same</div>
+    </div> -->
+
+  <button class="btn btn-primary" type="submit" >Submit</button>
+</form>
+

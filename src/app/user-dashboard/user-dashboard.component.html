@@ -1,0 +1,160 @@
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+<header style="background: navy;" class="text-gray-600 body-font">
+  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span style=" color:white;" class="ml-3 text-xl">Vehicle Loan</span>
+    </a>
+    <nav id="helements" class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <a style=" color:white;" [routerLink]="['/userDashboardLink']" class="mr-5 hover:text-gray-900">Home</a>
+      <a style=" color: white;" [routerLink]="['/applyLink']" class="mr-5 hover:text-gray-900">Apply for another loan</a>
+    </nav>
+    <button (click)="logout()" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+</header>
+<hr><hr><hr><hr><hr><hr>
+<body>
+
+<div class="sidenav">
+  <a href="#about">Profile</a>
+  <a (click)="loan()">Loans</a>
+  <!-- <a href="">Transcations</a> -->
+  
+</div>
+
+<div class="main">
+  <section style="color:navy;">Welcome Username,</section>
+  <table id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
+    
+    <th>User Id</th>
+    <th>User Name</th>
+    <th>User Email</th>
+    <th>User Phone</th>
+    <th>Status</th>
+    <tr>
+        <td>12345</td>
+        <td>Shaun</td>
+        <td>shaun@gmail.com</td>
+        <td>887556423</td>
+        <td>ACTIVE</td>
+    </tr>
+
+</table>
+
+
+<table *ngIf="show" id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
+  <th>Loan Id</th>
+  <th>Total Amount</th>
+  <th>Paid Amount</th>
+  <th>Pending Amount</th>
+  <th>EMI</th>
+  <th>Loan Terms</th>
+  <th>Rate Of Interest</th>
+  <tr>
+      <td>4521</td>
+      <td>1000000</td>
+      <td>300000</td>
+      <td>700000</td>
+      <td>10</td>
+      <td>8</td>
+      <td>10.5</td>
+  </tr>
+
+</table>
+
+</div>  
+</body>
+
+
+    
+<!-- <input type="text" placeholder="    Search Here........" id="searchBox" style="background-color:floralwhite;"> <br><br><br>
+    <br><br><br>
+
+<table id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
+      <th>User Id</th>
+      <th>User Name</th>
+      <th>User Email</th>
+      <th>User Phone</th>
+      <th>Status</th>
+      <tr>
+          <td>12345</td>
+          <td>Shaun</td>
+          <td>shaun@gmail.com</td>
+          <td>887556423</td>
+          <td>ACTIVE</td>
+      </tr>
+
+</table>
+<h1>Loan Details</h1>
+<table id="transactions" style="margin-top: 50px;margin-bottom: 50px;">
+    <th>Loan Id</th>
+    <th>Total Amount</th>
+    <th>Paid Amount</th>
+    <th>Pending Amount</th>
+    <th>EMI</th>
+    <th>Loan Terms</th>
+    <th>Rate Of Interest</th>
+    <tr>
+        <td>4521</td>
+        <td>1000000</td>
+        <td>300000</td>
+        <td>700000</td>
+        <td>10</td>
+        <td>8</td>
+        <td>10.5</td>
+    </tr>
+
+</table>
+
+<table id="transactions" style="margin-top: 50px;margin-bottom: 50px;">
+      <th>TRANSACTION ID</th>
+      <th>DATE</th>
+      <th>TIME</th>
+      <th>ACCOUNT</th>
+      <th>AMOUNT</th>
+      <tr>
+          <td>123456785</td>
+          <td>22/03/20</td>
+          <td>5:45PM</td>
+          <td>HDFC5678</td>
+          <td>20000</td>
+      </tr>
+      <tr>
+        <td>123456786</td>
+        <td>22/04/20</td>
+        <td>5:45PM</td>
+        <td>HDFC5678</td>
+        <td>20000</td>
+    </tr>
+    <tr>
+        <td>123456787</td>
+        <td>22/05/20</td>
+        <td>5:45PM</td>
+        <td>HDFC5678</td>
+        <td>20000</td>
+    </tr>
+    <tr>
+        <td>123456788</td>
+        <td>22/06/20</td>
+        <td>5:45PM</td>
+        <td>HDFC5678</td>
+        <td>20000</td>
+    </tr>
+    <tr>
+        <td>123456789</td>
+        <td>22/07/20</td>
+        <td>5:45PM</td>
+        <td>HDFC5678</td>
+        <td>20000</td>
+    </tr>
+      
+  </table>  -->
+  
+
+

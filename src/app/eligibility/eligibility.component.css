@@ -1,0 +1,72 @@
+html {
+  box-sizing: border-box;
+}
+
+* {
+  display:flexbox;
+  box-sizing: inherit;
+}
+
+fieldset {
+  border: .5em solid lighten(deepskyblue, 30%);
+  border-radius: .2em;
+  max-width: 400px;
+  margin: 3em auto;
+  padding: 1em;
+}
+
+form {
+  border: .5em solid lighten(deepskyblue, 30%);
+  border-radius: .2em;
+  max-width: 400px;
+  margin: 3em auto;
+  padding: 1em;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: .5em;
+  cursor: pointer;
+}
+
+
+input[type="number"] {
+  display: block;
+  width: 95%;
+  padding: .5em;
+  transition: .5s ease-out; 
+
+}
+
+button {
+  display: inline;
+  border: none;
+  padding: 1em;
+  width: fit-content;
+  font-weight: bold;
+  color: white;
+  background: orangered;
+  text-transform: uppercase;
+  font-size: .8em;
+  transition: .15s ease-out;
+  
+}
+.apply{
+  float: right;
+}
+#I,#emi,#age,#R,#N{
+  width: 95%;
+}
+
+.calcemi{
+  margin-left: 200px;
+}
+.tpbtn{
+  position: relative;
+}

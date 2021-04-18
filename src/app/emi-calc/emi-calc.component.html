@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="head">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Calculator</title>
+</head>
+<body>
+    <fieldset>
+    <h1>EMI Calculator</h1>
+    <div class="input">
+    <div  id="input-loan-amount">
+        <p>
+        <label for="A">Loan Amount: </label>
+       <input class="input-box" id="A" type="number" placeholder="Enter Loan Amount" [(ngModel)]="amount">
+        </p>
+    </div>
+    <div  id="input-rateofinterest">
+        <p>
+        <label for="R">Rate of Interest per month: {{roi}}% </label>
+        <input class="input-box" id="R" type="range" step="0.25" [(ngModel)]="roi" max=15.00 min=6.75>
+       
+        </p>
+    </div>
+     <div  id="input-duration">
+         <p>
+        <label for="N">Tenure in months: {{loanterms}} </label>
+        <input class="input-box" id="N" type="range" step="1" [(ngModel)]="loanterms" min="6" >
+        
+        </p>
+        <br>
+    </div>
+    </div>
+    
+    <div>
+    <div>
+        <strong>Loan EMI</strong><br>
+        <button class="emibtn" id='emi' type="button">{{emi | currency: 'INR':true:'1.2'}}</button><br>
+    </div>
+
+    <div>
+        <strong>Total Interest Payable</strong><br>
+        <button class="tpbtn" id='tbl_int' type="button">{{totalInterest | currency: 'INR':true:'1.2'}} </button><br>
+    </div>
+
+    <div class="alert alert-info col-md-5">
+        <strong>Total Payment (Principal + Interest)</strong><br>
+        <button class="tibtn" id='tbl_full' type="button">{{totalPayment | currency: 'INR':true:'1.2'}}</button><br>
+    </div>
+</div>
+
+    <button class="calcemi" (click)="calculateEmi()">
+        Calculate EMI
+    </button>
+</fieldset>
+
+
+</body>
+</html>

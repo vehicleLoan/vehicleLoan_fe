@@ -1,0 +1,81 @@
+.two,.car{
+   width:16.5cm; 
+   height: fit-content;
+}
+
+.car{
+    float: right;
+}
+
+.two-wheeler-image{
+   width: 100%;
+}
+
+
+ /* .scroller{
+    width: 840px; 
+    height: 500px; 
+    text-align:center;
+    margin:0; 
+    padding:0;
+    position: relative;
+    z-index: 1;
+  
+}  */
+
+button{
+    background-color: orangered;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: fit-content;
+}
+
+button.apply{
+  float: right;
+}
+
+button:hover{
+    background-color: orange;
+}
+
+fieldset.two,fieldset.car{
+    display: inline;
+}
+
+
+ul li:before{
+    content: "➤";
+    color: red;
+}
+
+h3{
+    text-align: center;
+}
+
+.card {
+    background-color: white;
+    padding: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+  }
+   
+.cc {
+    margin-top: 20px;
+    float: left;
+    padding: 5px;
+    text-align: center;
+} 
+
+.img1 {
+    max-width: 400px;
+    height: 150px;
+    margin-right: 19px;
+    
+} 
+
+
+
+   

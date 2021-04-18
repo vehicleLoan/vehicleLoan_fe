@@ -1,0 +1,36 @@
+
+  <div class="topnav">
+    <ul style="list-style-type: none;">
+      <img src="../assets/images/logo1.jpg" width="60px" height="60px" class="logo">
+      <li><a [routerLink]="['/homeLink']">Home</a></li>
+      <li><a [routerLink]="['/aboutUsLink']">About Us</a></li>
+      <li>
+        <div class="dropdown">
+          <button class="dropbtn">Login</button>
+          <div class="dropdown-content">
+              <dt><a [routerLink]="['/loginLink']"><b>User</b></a></dt>
+              <dt><a [routerLink]="['/loginAdminLink']"><b>Admin</b></a></dt>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+
+<div class="main">
+  <div class="card">
+  <router-outlet></router-outlet>
+</div>
+</div>
+
+
+
+<div class="footer">
+  <a [routerLink]="['/termsLink']">Terms & Conditions</a> | 
+  <a [routerLink]="['/privacyPolicyLink']">Privacy Policy</a>
+ <hr>
+ Copyright@ 2021. All rights Reserved.
+</div>

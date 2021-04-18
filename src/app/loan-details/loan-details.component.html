@@ -1,0 +1,68 @@
+<div  class="nav">
+    <span  [routerLink]="['/applyLink']">Personal Details</span> >>
+    <span  [routerLink]="['/employmentDetailsLink']">Employement Details</span> >> 
+    <span [routerLink]="['/vehicleDetailsLink']">Vehicle Details</span> >> 
+    <span [routerLink]="['/loanDetailsLink']">Loan Details</span> >>
+    <span [routerLink]="['/bankDetailsLink']">Bank Details</span><br><br>
+</div>         
+<hr><hr>
+<form  #myForm=ngForm (ngSubmit)="myForm">
+  <div class="form-group">
+    <div class="col-xs-6  col-xs-offset-3 align-center">
+      <h4>Loan Details</h4><br>
+       
+      <div class="form-group">
+        <label >Loan Amount</label>
+        <input type="Number" #lamnt="ngModel" [(ngModel)]="cust.loanAmt" pattern="^[0-9]{5,7}$"  placeholder="Example 1,60,000" class="form-control "name="lamt" required>
+        <div *ngIf="lamnt.invalid && (lamnt.dirty || lamnt.touched)" style="color: red; border-color: red;">
+          <div *ngIf="lamnt.errors.required">Loan Amount is Required </div>
+          <div *ngIf="lamnt.errors.pattern">Invalid Amount</div>
+        </div><br>
+  
+        <label>Loan Tenure</label>
+        <input type="text" #lt="ngModel" pattern="^[0-9]{0,2}$"  [(ngModel)]="cust.loanTenure" placeholder="Example 14 months " class="form-control "name="tenure" required>
+        <div *ngIf="lt.invalid && (lt.dirty || lt.touched)" style="color: red; border-color: red;">
+          <div *ngIf="lt.errors.required">Loan Tenure is Requird</div>
+          <div *ngIf="lt.errors.pattern">Invalid Tenure</div>
+        </div><br>
+
+        <label class="control-label">Any Existing Loan</label>
+        <div class="form-control">
+          <input type="radio"  required name="existing" (click)="emi()">
+            Yes
+          <input type="radio" value="Not Applicable" required name="existing"  (click)="Noemi()">
+            No                    
+        </div><br>
+                        
+        <div [style.display]="exEmi? 'block' : 'none' ">
+
+         <label >Existing Loan Amount</label>
+         <input type="number" #la="ngModel" [(ngModel)]="cust.exloan"  pattern="^[0-9]{5,7}$" placeholder="Existing Loan Amount" class="form-control" name="exloan" required>
+         <div *ngIf="la.invalid && (la.dirty || la.touched)" style="color: red; border-color: red;">
+           <div *ngIf="la.errors.required">Loan Amount is Required.</div>
+           <div *ngIf="la.errors.pattern">Invalid Amount</div>
+         </div><br>
+  
+        <label >Existing Emi Amount</label>
+        <input type="number" #ea="ngModel" [(ngModel)]="cust.emiAmount"  pattern="^[0-9]{4,7}$" placeholder="Existing Emi Amount" class="form-control" name="emiamount" required>
+        <div *ngIf="ea.invalid && (ea.dirty || ea.touched)" style="color: red; border-color: red;">
+          <div *ngIf="ea.errors.required">EMI Amount is Required.</div>
+          <div *ngIf="ea.errors.pattern">Invalid Amount</div>
+        </div><br>
+  
+        <label>Bank Name</label>
+        <input type="text"  #cn="ngModel" pattern="^[a-zA-Z]+$" [(ngModel)]="cust.bankname"  placeholder="example HDFC" class="form-control" name="bankName" required>
+        <div *ngIf="cn.invalid && (cn.dirty || cn.touched)" style="color: red; border-color: red;">
+          <div *ngIf="cn.errors.required">Bank Name is Required</div>
+          <div *ngIf="cn.errors.pattern">Alphabets only</div>  
+        </div><br>
+  
+      
+        <button type="submit"  [routerLink]="['/bankDetailsLink']" name="Next" value="Next" [disabled]="myForm.form.invalid" class="btn btn-primary">Next</button>            
+        </div>              
+      </div>
+    </div>
+  </div>
+</form>
+
+          

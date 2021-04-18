@@ -1,0 +1,64 @@
+<marquee width="100%" direction="left" style="color: red;padding-top: 20px;">
+  Our Bank never asks for your Card/PIN/OTP/CVV details on phone, message or email. 
+  Please do not click on links received on your email or mobile asking your Bank/Card details.   |   
+  Attention Retail/Corporate INB Users, transaction OTP will be made mandatory for all merchant related transactions, 
+  hence please have your mobile number registered if the same has not been done until now.   |   
+   Dear Customer, if you have donated for PM CARES through Internet Banking, 
+   you can download the Receipt from PMCares portal of govt. using the reference number available with you.
+</marquee>
+<div class="scroller">
+    <ng-image-slider [images]="imageObject" [infinite]="true" [imageSize]="{width: '100%',height:500}" [autoSlide]="4" slideImage="1" #nav></ng-image-slider>
+</div>
+
+<div class="container">
+    <fieldset class="two"> 
+         <h3>Two Wheeler Loan</h3><br>
+         <img src="https://source.unsplash.com/1600x900/?hayabusa" (click)="apply()" class="two-wheeler-image">
+         <ul style=" list-style-type: none;">
+             <li>Pay back in easy monthly instalments</li>
+             <li>Reduce the burden of a one-time payment</li>
+         </ul>
+         <br><br>
+         <button type="submit" class="btncalc" (click)="calc()">EMI Calculator</button>
+         <button type="submit" class="btnapply" (click)="apply()" class="apply">Apply Now</button>
+
+    </fieldset>
+ 
+    <fieldset class="car"> 
+        <h3>Car Loan</h3><br>
+        <img src="https://source.unsplash.com/1600x900/?bmw"  width="100%" height="100%" (click)="apply()">
+        <ul style=" list-style-type: none;">
+            <li>Competitive rate of Interest</li>
+            <li>Higher amount of eligibility upto Rs.100.00Lacs</li>
+            <li>Longer tenure upto 84 Months</li>
+            <li>Interest calculated on Daily Reducing Balance</li>
+        </ul>
+        <button type="submit" class="btncalc" (click)="calc()">EMI Calculator</button>
+        <button type="submit" class="btnapply" (click)="apply()" class="apply">Apply Now</button>
+
+   </fieldset>
+</div>
+<hr><hr>
+<div class="card">
+  <h1 style="text-align: center;text-decoration: underline;">Our Features</h1>
+  <div class="cc">
+    <img src="../assets/images/Be Friendly.jfif" class="img1">
+    <p>Client Friendly</p>
+  </div>
+  <div class="cc">
+    <img src="../assets/images/Cyber Sequrity.jfif" class="img1">
+    <p>Your Security is Our Priority</p>
+  </div>
+  <div class="cc">
+    <img src="../assets/images/best loan offers.jfif"class="img1">
+    <p>Best Deals For you</p>
+  </div>
+  <div class="cc">
+    <img src="../assets/images/Quick Process.jfif" class="img1">
+    <p>Get Quick Loan</p>
+  </div>
+  <div class="cc">
+    <img src="../assets/images/Best Service.jfif" class="img1">
+    <p>Best service</p>
+  </div>
+</div>

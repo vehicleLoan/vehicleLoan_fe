@@ -1,0 +1,69 @@
+*{
+    box-sizing: border-box;
+    font-family: "Muli", "Baloo Da 2", "Montserrat", sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    text-decoration: none;
+    background-color: orangered;
+    width: 100%;
+    height: 75px;
+    margin: auto;
+  }
+  
+  
+  .topnav ul {
+    list-style-type: none;  /*to remove bullets from list */
+    display: inline;
+    float: right;
+    text-decoration: none;
+    float: left;
+  } 
+  
+  .topnav ul li{
+    display: inline;
+    margin: 20px;
+    text-decoration: none;
+  }
+  
+  #transactions {
+    float: left;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #transactions td, #transactions th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #transactions tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #transactions tr:hover {background-color: #ddd;}
+  
+  #transactions th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3244e9;
+    color: white;
+    text-align: center;
+  }
+  
+  a:hover {
+    color:rgb(231, 45, 12);
+  }
+  
+  #searchBox{
+    width: 350px;
+    height: 50px;
+    float:right;
+    margin: 50px;
+    border-style:ridge;
+    border-radius: 20px;
+  }
+  
+  

@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Poppins:400,500&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+.bg-img{
+  background: url('/assets/images/mp.jpeg');
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.content{
+  float: left;
+  margin-top: 100px;
+  position: absolute;
+  top: 40%;
+  left: 80%;
+  z-index: 999;
+  text-align: center;
+  padding: 60px 32px;
+  width: 370px;
+  transform: translate(-50%,-50%);
+  background: rgba(255,255,255,0.04);
+  box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.75);
+}
+.content header{
+  color: black;
+  font-size: 33px;
+  font-weight: 600;
+  margin: 0 0 35px 0;
+  font-family: 'Montserrat',sans-serif;
+}
+.field{
+  position: relative;
+  height: 45px;
+  width: 100%;
+  display: flex;
+  background: rgba(255,255,255,0.94);
+}
+.field span{
+  color: #222;
+  width: 40px;
+  line-height: 45px;
+}
+.field input{
+  height: 100%;
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #222;
+  font-size: 16px;
+  font-family: 'Poppins',sans-serif;
+}
+.space{
+  margin-top: 16px;
+}
+
+.pass{
+  text-align: left;
+  margin: 10px 0;
+  
+}
+.pass a,a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-family: 'Poppins',sans-serif;
+}
+.pass:hover a,a:hover{
+  text-decoration: underline;
+}
+
+button[type="submit"],
+button[type="reset"]{
+  outline:none;
+  padding:15px;
+  background: orangered;
+  border: none;
+  color: white;
+  width: fit-content;
+  font-size: 18px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-family: 'Montserrat',sans-serif;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover{
+  background: orange;
+}
+
+
+.links{
+  display: flex;
+  cursor: pointer;
+  color: white;
+  margin: 0 0 20px 0;
+}
+
+.loginbtn{
+    float: left;
+}
+
+.cancelbtn{
+    float:right;
+}
+
+.links i{
+  font-size: 17px;
+}
+i span{
+  margin-left: 0px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-family: 'Poppins',sans-serif;
+}

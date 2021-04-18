@@ -1,0 +1,55 @@
+<fieldset>
+  <h1>Check Eligibility</h1>
+  <div class="input">
+  <div  id="input-loan-amount">
+    <p>
+      <label for="I">Gross Monthly Income {{income}}</label>
+      <input class="input-box" id="I"  type="range" step="10000" min="10000" max="2000000" [value]="income" placeholder="Enter Monthly income" [(ngModel)]="income">
+      <input type="number" name="income" id="Itext" [placeholder]="income" [value]="income" [(ngModel)]="income">
+    </p>
+  </div>
+  <div  id="input-existing-emi">
+      <p>
+      <label for="emi">Existing Emi amount  {{existing}}</label>
+     <input class="input-box" id="emi" type="range" step="1" min="0" max="2000000" [value]="existing" placeholder="Enter existing emi amount" [(ngModel)]="existing">
+     <input type="number" name="income" id="I" [placeholder]="existing" [value]="existing" [(ngModel)]="existing"> 
+    </p>
+  </div>
+  <div  id="input-existing-emi">
+    <p>
+    <label for="age">Age {{age}}</label>
+   <input class="input-box" id="age" type="range" step="1" min="21" max="60" placeholder="Enter age" [(ngModel)]="age">
+    </p>
+</div>
+ <div  id="input-rateofinterest">
+        <p>
+        <label for="R">Rate of Interest per month: {{roi | number : '1.2-2'}}% </label>
+        <input class="input-box" id="R" type="range" step="0.25" [(ngModel)]="roi" max=15.00 min=6.75>
+       
+        </p>
+    </div>
+     <div  id="input-duration">
+         <p>
+        <label for="N">Tenure in months: {{loanterms}} </label>
+        <input class="input-box" id="N" type="range" step="1" [(ngModel)]="loanterms" min="6" >
+        
+        </p>
+        <br>
+    </div>
+    </div>
+    
+    <div>
+    <div>
+        <strong>Eligible Loan Amount</strong><br>
+        <button class="emibtn" id='emi' type="button">{{amount | currency: 'INR':true:'1.2'}}</button><br>
+    </div>
+
+</div> 
+
+<br>
+<button type="submit" class="submit" (click)="submit()">Check Eligibility</button>
+<button type="submit" class="apply" (click)="apply()">Apply Loan</button>
+<br>
+</fieldset>
+
+

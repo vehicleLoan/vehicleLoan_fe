@@ -1,0 +1,194 @@
+<div class="nav">
+    <span [routerLink]="['/applyLink']"  >Personal Details</span> >>
+    <span  [routerLink]="['/employmentDetailsLink']">Employement Details</span> >> 
+    <span [routerLink]="['/vehicleDetailsLink']">Vehicle Details</span> >> 
+    <span [routerLink]="['/loanDetailsLink']">Loan Details</span>>>
+    <span [routerLink]="['/bankDetailsLink']">Bank Details</span><br><br>
+</div> 
+<hr><hr>
+<form #myForm=ngForm (ngSubmit)="myForm">
+
+<div class="form-group">
+    <div class="col-xs-6  col-xs-offset-3 align-center">
+      <h4>Employment Details</h4><br>
+  
+      <div class="form-group">
+        <label class="control-label">Type of Employment :</label>
+        <div class="form-control">
+                  
+          <input type="radio" value="salaried" required name="employ" [(ngModel)]="cust.employmentType" #et="ngModel" (click)="addsal()">
+            Salaried
+                  
+          <input type="radio" value="slef employed" required name="employ" [(ngModel)]="cust.employmentType" #et="ngModel" (click)="addSelf()" >
+            Self Employed
+              
+          <input type="radio" value="pensioner" name="employ" required [(ngModel)]="cust.employmentType" #et="ngModel" (click)="addPen()">
+            Pensioner
+        </div>
+        <span class="help-block" *ngIf="et.touched && et.invalid" style="color: red; border: red;">
+          Choose One
+        </span>
+          
+      </div>
+          
+<!-- --------------------------------------------Salaried--------------------------------------------------------- -->
+          
+    <div  [style.display]="sal? 'block' : 'none' " >
+  
+        <label >Company Name</label>
+        <input type="text" #cn="ngModel"  pattern="^[a-zA-Z]+$" [(ngModel)]="cust.CompanyName" placeholder="Company Name" class="form-control" name="companyName" required="true">
+        <div *ngIf="cn.invalid && (cn.dirty || cn.touched)" style="color: red; border-color: red;">
+        <div *ngIf="cn.errors.required">
+            Company Name is Required
+        </div>
+        <div *ngIf="cn.errors.pattern">
+          Enter Alphabets Only
+        </div>
+          
+    </div><br>
+  
+    <div class="form-group">
+        <label>Profession</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+            <option value="Goverment Employee" >Goverment Employee </option>
+            <option value="Medical Professional">Medical Professional</option>
+            <option value="Engineer">Engineer</option>
+            <option value="Legal Profession">Legal Profession</option>
+            <option value="Artist">Artist</option>
+        </select>
+    </div><br>
+  
+            
+        <label>Address</label>
+        <input type="text"  class="form-control" #ad="ngModel" minlength="20"  name="address" required
+        placeholder="Address" [(ngModel)]="cust.address">
+        <div *ngIf="ad.invalid && (ad.dirty || ad.touched)" style="color: red; border-color: red;">
+          <div *ngIf="ad.errors.required">
+           Adress is required
+          </div>
+          <div *ngIf="ad.errors.minlength">
+            Address length should be more than 15 characters
+          </div>
+        </div><br>
+          
+          <label>City</label>
+        <input type="text"  [(ngModel)]="cust.city" required placeholder="city"
+        class="form-control "name="city" #ct="ngModel">
+        <div *ngIf="ct.invalid && (ct.dirty || ct.touched)" style="color: red; border-color: red;">
+          <div *ngIf="ct.errors.required">
+           Please enter.
+          </div>
+        </div><br>
+        
+        <label>State</label>
+        <input type="text"  [(ngModel)]="cust.state" required placeholder="State"
+        class="form-control "name="state" #st="ngModel">
+        <div *ngIf="st.invalid && (st.dirty || st.touched)" style="color: red; border-color: red;">
+          <div *ngIf="st.errors.required">
+            Please enter
+          </div>
+        </div><br>
+  
+        <label>Annual Salary</label>
+        <input type="number"  #al="ngModel" pattern="^[0-9]{5,7}$" [(ngModel)]="cust.AnnualSalary" placeholder="Annual Salary" class="form-control" name="annualSal" required>
+          <div *ngIf="al.invalid && (al.dirty || al.touched)" style="color: red; border-color: red;">
+          <div *ngIf="al.errors.required">
+            Please enter  numbers only
+          </div>
+          <div *ngIf="al.errors.pattern">
+            Not Eligible to Apply for Loan
+          </div>
+        </div><br>
+  
+          <label >Work Experience in Years</label>
+          <input type="number"  #we="ngModel" pattern="^[0-9]{0,2}$" [(ngModel)]="cust.WorkExp" placeholder="work Experience" class="form-control" name="work" required>
+          <div *ngIf="we.invalid && (we.dirty || we.touched)" style="color: red; border-color: red;">
+          <div *ngIf="we.errors.required">
+            Please enter
+          </div>
+          <div *ngIf="we.errors.pattern">
+            Not Eligible to Apply for Loan
+          </div>
+        </div><br>
+        <button type="submit" name="submit"  [routerLink]="['/vehicleDetailsLink']" [disabled]="myForm.form.invalid" value="Next"  class="btn btn-primary">Next</button>
+        
+  
+    </div> 
+  
+<!-- -------------------------------------------Pensioner--------------------------------------------------------- -->
+          <form #pensionForm=ngForm (ngSubmit)="pensionForm">
+           <div [style.display]="pens?  'block' : 'none' "> 
+            <label>Annual income</label>
+            <input type="number"  #at="ngModel"   pattern="^[0-9]{5,7}$" [(ngModel)]="cust.income" placeholder="Annual Salary" class="form-control" name="income" required>
+              <div *ngIf="at.invalid && (at.dirty || at.touched)" style="color: red; border-color: red;">
+              <div *ngIf="at.errors.required">
+                Please Enter Numbers Only
+              </div>
+              <div *ngIf="at.errors.pattern">
+                Not Eligible to Apply
+              </div>
+            </div><br>
+          
+          
+          <label>Profession</label>
+          <input type="text"  #pp="ngModel" pattern="^[a-zA-Z]+$"  [(ngModel)]="cust.profession" placeholder="Profession" class="form-control" name="prof" required>
+            <div *ngIf="pp.invalid && (pp.dirty || pp.touched)" style="color: red; border-color: red;">
+            <div *ngIf="pp.errors.required">
+              Please enter
+            </div>
+            <div *ngIf="pp.errors.pattern">
+              Alphabets Only
+            </div>
+          </div><br>
+     
+          <button type="submit" name="submit"  [routerLink]="['/vehicleDetailsLink']" [disabled]="myForm.form.invalid" value="Next"  class="btn btn-primary">Next</button>
+        
+  
+          </div> 
+        </form>
+  
+<!-- -------------------------------------------self employed--------------------------------------------------------- -->
+<form #selfEmployForm=ngForm (ngSubmit)="selfEmployForm">
+    <div [style.display]="self?  'block' : 'none' ">
+        <label>Profession</label>
+        <input type="text"  #pw="ngModel" pattern="^[a-zA-Z]+$" autofocus="enable" [(ngModel)]="cust.profession" placeholder="Pension" class="form-control" name="profession" required>
+        <div *ngIf="pw.invalid && (pw.dirty || pw.touched)" style="color: red; border-color: red;">
+        <div *ngIf="pw.errors.required">
+            Please enter
+        </div>
+        <div *ngIf="pw.errors.pattern">
+            Enter Alphabets Only
+        </div>
+        </div><br>
+  
+       <label>Annual Salary</label>
+        <input type="number"  #aa="ngModel" autofocus="enable"  pattern="^[0-9]{5,7}$" [(ngModel)]="cust.salary" placeholder="Annual Salary" class="form-control" name="salary" required>
+        <div *ngIf="aa.invalid && (aa.dirty || aa.touched)" style="color: red; border-color: red;">
+            <div *ngIf="aa.errors.required">
+                Please Enter Numbers Only
+            </div>
+            <div *ngIf="aa.errors.pattern">
+                Not Eligible to Apply for Loan
+            </div>
+    </div><br>
+           
+            <label >Work Experience in Years</label>
+            <input type="number"  #ww="ngModel" pattern="^[0-9]{0,2}$"  [(ngModel)]="cust.WorkExp" placeholder="work Experience" class="form-control" name="worke" required>
+            <div *ngIf="ww.invalid && (ww.dirty || ww.touched)" style="color: red; border-color: red;">
+            <div *ngIf="ww.errors.required">
+              Please enter work experience
+            </div>
+            <div *ngIf="ww.errors.pattern">
+              Not Eligible to Apply for Loan
+            </div>
+          </div><br>
+          <button type="submit" name="submit"  [routerLink]="['/vehicleDetailsLink']" [disabled]="myForm.form.invalid" value="Next"  class="btn btn-primary">Next</button>
+        
+        </div> 
+        </form>
+        
+<!-- -------------------------------------------End-------------------------------------------------------- -->
+         
+      </div> 
+  </div>
+</form>

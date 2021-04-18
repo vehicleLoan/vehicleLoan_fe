@@ -1,0 +1,36 @@
+.authorities-section h2 {
+	font-weight: 700;
+	margin-bottom: 90px;
+}
+
+.authoritie-item {
+	padding-right: 15px;
+	margin-bottom: 30px;
+}
+
+.authoritie-item img {
+	margin-bottom: 30px;
+}
+
+.img1{
+    float: left;
+}
+
+.authoritie-item h4 {
+	padding-right: 30px;
+	font-weight: 700;
+	margin-bottom: 30px;
+	line-height: 1.4;
+}
+
+.authoritie-item p {
+	margin-bottom: 30px;
+}
+
+.authoritie-item .readmore img {
+	margin-bottom: 0;
+}
+
+td{
+    text-align: center;
+}
