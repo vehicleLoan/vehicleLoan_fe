@@ -37,11 +37,11 @@ html {
   
   }
   
-  button {
+.submit{
     display: inline;
     border: none;
     padding: 1em;
-    margin-left: 170px;
+    margin: 0px 0px 0px 145px;
     width: fit-content;
     font-weight: bold;
     color: white;
@@ -72,3 +72,26 @@ html {
     justify-content: center;
   }
   
+  fieldset{
+    width: 50%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: 330px;
+  }
+
+  .navbar{
+    cursor:pointer;
+    text-transform: uppercase;
+    border: 2px solid orange;
+    padding: 1em;
+    width: fit-content;
+    font-weight: bold;
+    
+  }
+  
+  .navbar:hover{
+    background-color: orange;
+    font-size: .9em;
+    transition: .8s ease-out;
+  }

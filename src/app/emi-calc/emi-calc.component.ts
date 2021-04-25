@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-emi-calc',
   templateUrl: './emi-calc.component.html',

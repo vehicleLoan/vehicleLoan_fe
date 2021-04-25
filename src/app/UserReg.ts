@@ -3,5 +3,6 @@ export class UserDto{
     phone:string;
     email:string;
     password:string;
+    confirmPassword:string;
 
 }

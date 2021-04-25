@@ -5,11 +5,11 @@
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>
-      <span style=" color:white;" class="ml-3 text-xl">Vehicle Loan</span>
+      <span style=" color:white;margin-bottom: 10px;" class="ml-3 text-xl">EMI PE GAADI</span>
     </a>
     <nav id="helements" class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <a style=" color:white;" [routerLink]="['/userDashboardLink']" class="mr-5 hover:text-gray-900">Home</a>
-      <a style=" color: white;" [routerLink]="['/applyLink']" class="mr-5 hover:text-gray-900">Apply for another loan</a>
+      <a style=" color: white;" [routerLink]="['/applyLink']" class="mr-5 hover:text-gray-900">Apply for loan</a>
     </nav>
     <button (click)="logout()" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout
       <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
@@ -19,142 +19,124 @@
   </div>
 </header>
 <hr><hr><hr><hr><hr><hr>
-<body>
 
-<div class="sidenav">
-  <a href="#about">Profile</a>
-  <a (click)="loan()">Loans</a>
-  <!-- <a href="">Transcations</a> -->
-  
+
+
+ <div class="leftbox">
+   <div class="sidenav">
+  <nav>
+    <ul>
+     <li class="var_nav">
+        <div class="link_bg"></div>
+        <div class="link_title">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          <a style="font-size: 23px;" (click)="profile()">Profile</a>
+        </div>
+     </li>
+     <li class="var_nav">
+        <div class="link_bg"></div>
+        <div class="link_title">
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+          <!-- <i class="fa fa-money" aria-hidden="true"></i> -->
+          <a style="font-size: 23px;" (click)="loan()">Loans</a>
+        </div>
+     </li>
+     <li class="var_nav">
+      <div class="link_bg"></div>
+      <div class="link_title">
+        <i class="fa fa-calendar" aria-hidden="true"></i>
+        <!-- <i class="fa fa-clock-o" aria-hidden="true"></i> -->
+        <a style="font-size: 22.8px;" (click)="scheduler()">EMI Scheduler</a>
+      </div>
+   </li>
+    </ul>
+  </nav>
 </div>
+</div>
+  
 
 <div class="main">
-  <section style="color:navy;">Welcome Username,</section>
-  <table id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
-    
-    <th>User Id</th>
-    <th>User Name</th>
-    <th>User Email</th>
-    <th>User Phone</th>
-    <th>Status</th>
+  <section style="color:navy;">Welcome {{cust.custFirstName}} {{cust.custLastName}},</section>
+  
+  <table *ngIf="profile" id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
     <tr>
-        <td>12345</td>
-        <td>Shaun</td>
-        <td>shaun@gmail.com</td>
-        <td>887556423</td>
-        <td>ACTIVE</td>
+    <th>Customer Id</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Gender</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>City</th>
+    <th>State</th>
+
+    </tr>
+    <tr>
+        <td>{{cust.custId}}</td>
+        <td>{{cust.custFirstName}}</td>
+        <td>{{cust.custLastName}}</td>
+        <td>{{cust.gender}}</td>
+        <td>{{cust.email}}</td>
+        <td>{{cust.phone}}</td>
+        <td>{{cust.city}}</td>
+        <td>{{cust.state}}</td>
     </tr>
 
 </table>
 
 
+
 <table *ngIf="show" id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
-  <th>Loan Id</th>
-  <th>Total Amount</th>
-  <th>Paid Amount</th>
-  <th>Pending Amount</th>
-  <th>EMI</th>
-  <th>Loan Terms</th>
-  <th>Rate Of Interest</th>
   <tr>
-      <td>4521</td>
-      <td>1000000</td>
-      <td>300000</td>
-      <td>700000</td>
-      <td>10</td>
-      <td>8</td>
-      <td>10.5</td>
+  <th>Loan Id</th>
+  <th>Loan Amount</th>
+  <th>ROI</th>
+  <th>Tenure</th>
+  <th>EMI</th>
+  <th>Loan Status</th>
+  </tr>
+  
+  <tr *ngFor="let loan of lo,index as i">
+      <td>{{loan.loanId}}</td>
+      <td>{{loan.loanAmount}}</td>
+      <td>{{loan.rateOfInterest}}</td>
+      <td>{{loan.tenure}}</td>
+      <td>{{amt[i] | currency: 'INR':true:'1.1' }}</td>
+      <td>{{loan.status}}</td>
   </tr>
 
 </table>
 
-</div>  
-</body>
 
-
-    
-<!-- <input type="text" placeholder="    Search Here........" id="searchBox" style="background-color:floralwhite;"> <br><br><br>
-    <br><br><br>
-
-<table id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
-      <th>User Id</th>
-      <th>User Name</th>
-      <th>User Email</th>
-      <th>User Phone</th>
-      <th>Status</th>
-      <tr>
-          <td>12345</td>
-          <td>Shaun</td>
-          <td>shaun@gmail.com</td>
-          <td>887556423</td>
-          <td>ACTIVE</td>
-      </tr>
-
-</table>
-<h1>Loan Details</h1>
-<table id="transactions" style="margin-top: 50px;margin-bottom: 50px;">
+<table *ngIf="view" id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
+  <table  id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
+     <tr>
+    <th>SR. No</th>
     <th>Loan Id</th>
-    <th>Total Amount</th>
-    <th>Paid Amount</th>
-    <th>Pending Amount</th>
+    <th>Loan Amount</th>
+    <th>Tenure</th>
     <th>EMI</th>
-    <th>Loan Terms</th>
-    <th>Rate Of Interest</th>
-    <tr>
-        <td>4521</td>
-        <td>1000000</td>
-        <td>300000</td>
-        <td>700000</td>
-        <td>10</td>
-        <td>8</td>
-        <td>10.5</td>
+    <th>Pick A Date </th>
+    <th>Pay Now</th>
     </tr>
+   
+    <tr  *ngFor="let loan of lon,let i =index">
+        <td>{{i+1}}</td>
+        <td>{{loan.loanId}}</td>
+        <td>{{lnamt[i] | currency: 'INR':true:'1.1'}}</td>
+     
+        <td>{{tenu[i]}}</td>
+        <td>{{rem[i] | currency: 'INR':true:'1.1' }}</td>
+        <td><input type="date" [min]="todayDate" required></td>
+       <td><button class="approveButton" (click)="pop(i)">Pay EMI</button><br><br></td> 
+    </tr> 
+  
+  </table>
+  
+  
+  
+  </table>
+</div>  
 
-</table>
-
-<table id="transactions" style="margin-top: 50px;margin-bottom: 50px;">
-      <th>TRANSACTION ID</th>
-      <th>DATE</th>
-      <th>TIME</th>
-      <th>ACCOUNT</th>
-      <th>AMOUNT</th>
-      <tr>
-          <td>123456785</td>
-          <td>22/03/20</td>
-          <td>5:45PM</td>
-          <td>HDFC5678</td>
-          <td>20000</td>
-      </tr>
-      <tr>
-        <td>123456786</td>
-        <td>22/04/20</td>
-        <td>5:45PM</td>
-        <td>HDFC5678</td>
-        <td>20000</td>
-    </tr>
-    <tr>
-        <td>123456787</td>
-        <td>22/05/20</td>
-        <td>5:45PM</td>
-        <td>HDFC5678</td>
-        <td>20000</td>
-    </tr>
-    <tr>
-        <td>123456788</td>
-        <td>22/06/20</td>
-        <td>5:45PM</td>
-        <td>HDFC5678</td>
-        <td>20000</td>
-    </tr>
-    <tr>
-        <td>123456789</td>
-        <td>22/07/20</td>
-        <td>5:45PM</td>
-        <td>HDFC5678</td>
-        <td>20000</td>
-    </tr>
-      
-  </table>  -->
   
 
 

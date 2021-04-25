@@ -1,12 +1,15 @@
 <div class="nav">
-  <span [routerLink]="['/applyLink']"  >Personal Details</span> >>
-  <span  [routerLink]="['/employmentDetailsLink']">Employement Details</span> >> 
-  <span [routerLink]="['/vehicleDetailsLink']">Vehicle Details</span> >> 
-  <span [routerLink]="['/loanDetailsLink']">Loan Details</span>>>
-  <span [routerLink]="['/bankDetailsLink']">Bank Details</span><br><br>
-</div> 
-<hr><hr>    
-<form #myForm=ngForm (ngSubmit)="myForm">
+  <button class = "navbar" [routerLink]="['/applyLink']">Personal Details</button>
+  <button class = "navbar" [routerLink]="['/employmentDetailsLink']">Employement Details</button>
+  <button class = "navbar" [routerLink]="['/vehicleDetailsLink']">Vehicle Details</button>
+  <button class = "navbar" [routerLink]="['/bankDetailsLink']">Bank Details</button>
+  <button class = "navbar" [routerLink]="['/uploadLink']">Upload Documents</button>
+  <button class = "navbar" [routerLink]="['/loanDetailsLink']">Loan Details</button>
+</div>  
+
+<hr><hr> 
+<fieldset>   
+<form #myForm=ngForm (ngSubmit)="submit()">
     
   <div class="form-group">
     <div class="col-xs-6  col-xs-offset-3 align-center">   
@@ -48,7 +51,7 @@
       </div><br>
 
       <label>Date of Birth</label>
-      <input type="date" id="dob" name="dob" min="1961-04-18" max="2000-04-18" required [(ngModel)]="cust.dateOfBirth"> 
+      <input type="date" id="dob" [(ngModel)]="cust.dateOfBirth" name="dob" min="1961-04-18" max="2000-04-18" required [(ngModel)]="cust.dateOfBirth"> 
         
       <br><br>
 
@@ -114,8 +117,8 @@
       </div><br>
       
       <label>State</label>
-      <input type="text" [(ngModel)]="cust.state" required placeholder="State"
-      class="form-control "name="Enter State" #st="ngModel"><br>
+      <input type="text" [(ngModel)]="cust.state" required placeholder="Enter State"
+      class="form-control "name="State" #st="ngModel"><br>
       <div *ngIf="st.invalid && (st.dirty || st.touched)" style="color: red; border-color: red;">
         <div *ngIf="st.errors.required">
           Please enter
@@ -125,10 +128,11 @@
       
   
       
-    <input type="submit" name="submit" [routerLink]="['/employmentDetailsLink']" value="Next" [disabled]="myForm.form.invalid" class="btn btn-primary">
+    <button type="submit" name="submit" value="Save and Next" [disabled]="myForm.form.invalid" class="submit">Save and Next</button>
                      
  
   
 </div>
 </div>
 </form>
+</fieldset><br>

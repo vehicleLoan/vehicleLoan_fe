@@ -1,0 +1,118 @@
+<h2 mat-dialog-title>Loan Application</h2>
+<mat-dialog-content class="mat-typography">
+  <h3>Personal Details</h3>
+  <table>
+    <th>Customer Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>City</th>
+    <tr>
+      <td>{{loan.customer.custId}}</td>
+      <td>{{loan.customer.custFirstName}}</td>
+      <td>{{loan.customer.custLastName}}</td>
+      <td>{{loan.customer.email}}</td>
+      <td>{{loan.customer.phone}}</td>
+      <td>{{loan.customer.address}}</td>
+      <td>{{loan.customer.city}}</td> 
+  </table>
+  <br>
+  <hr> 
+
+   <h3>Employement Details</h3> 
+  <table>
+      <th>Employment Type</th>
+      <th>Profession</th>
+      <th>Company Name</th>
+      <th>Company Address</th>
+      <th>Company City</th>
+      <th>Company State</th>
+      <th>Annual Salary</th>
+       <th>workExp</th> 
+  <tr>
+  <td>{{loan.customer.empType}}</td>
+  <td>{{loan.customer.profession}}</td>
+   <td>{{loan.customer.companyName}}</td>
+  <td>{{loan.customer.companyAddress}}</td>
+  <td>{{loan.customer.companyCity}}</td>
+  <td>{{loan.customer.companyState}}</td>
+  <td>{{loan.customer.annualSal}}</td> 
+   <td>{{loan.customer.workExp}}</td> 
+  </table>
+  <br>
+  <hr>
+
+  <h3>Vehicle Details</h3>
+  <table>
+    <th>Vehicle Id</th>
+    <th>Vehicle Type</th> 
+    <th>Vehicle Make</th>
+    <th>Vehicle Model</th>
+    <th>Vehicle City</th>
+    <th>Vehicle State</th>
+    
+  <tr>
+  <td>{{loan.vehicle.vehicleId}}</td>
+  <td>{{loan.vehicle.vehicleType}}</td>
+  <td>{{loan.vehicle.vehicleMake}}</td>
+  <td>{{loan.vehicle.vehicleModel}}</td>
+  <td>{{loan.vehicle.vehicleCity}}</td>
+  <td>{{loan.vehicle.vehicleState}}</td>
+  </table>
+  <br>
+  <hr>
+
+  <h3>Bank Details</h3>
+  <table>
+      <th>Account Id</th>
+      <th>Account Number</th>
+      <th>Bank Name</th>
+      <th>Branch Name</th>
+      <th>IFSC</th>
+  <tr>
+  <td>{{loan.customer.bankAccount.accountId}}</td>
+  <td>{{loan.customer.bankAccount.accountNumber}}</td>
+   <td>{{loan.customer.bankAccount.bankName}}</td>
+  <td>{{loan.customer.bankAccount.branchName}}</td>
+  <td>{{loan.customer.bankAccount.ifsc}}</td>
+  </table>
+  <br>
+  <hr>
+
+  <h3>Loan Details</h3>
+  <table>
+    <th>Loan Id</th>
+    <th>Loan Amount</th>
+    <th>Rate Of Interest</th>
+    <th>Tenure</th>
+    <th>status</th>
+    <th>Existing Emi</th>
+    <th>Existing Loan Bank</th>
+    
+
+    <tr>
+  <td>{{loan.loanId}}</td>
+  <td>{{loan.loanAmount}}</td>
+   <td>{{loan.rateOfInterest}}</td>
+  <td>{{loan.tenure}}</td>
+   <td>{{loan.status}}</td> 
+  <td>{{loan.existingEmi}}</td>
+  <td>{{loan.existingLoanBank}}</td> 
+  </table>
+  <br>
+  <hr>
+  
+  <h3>Documents</h3>
+
+  <div>
+    <img src ="http://localhost:9090/downloads/{{loan.document.aadharCard}}" width="80%">
+    <img src ="http://localhost:9090/downloads/{{ loan.document.panCard }}" width="80%">
+    <img src ="http://localhost:9090/downloads/{{ loan.document.paySlip }}" width="80%">
+  </div> 
+  
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close class="close">Close</button>
+</mat-dialog-actions>

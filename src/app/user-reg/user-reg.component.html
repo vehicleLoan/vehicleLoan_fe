@@ -1,6 +1,11 @@
-<h2 style="text-align: center;">User Registration Form</h2>
 
-<form (ngSubmit)="submit()">
+<hr><hr>
+<fieldset>
+  <span>
+    <i class="fa fa-user" aria-hidden="true"></i>
+    <h2 style="text-align: center;">Sign In</h2>
+  </span>
+<form #regForm=ngForm (ngSubmit)="submit()">
     First Name:
     <input type="text" name="uname" #nm="ngModel" minlength="3" placeholder="Enter first Name" required [(ngModel)]="userdto.custFirstName"/>
     <div *ngIf="nm.invalid && nm.dirty " style="color:red;border-color:red;">
@@ -32,15 +37,15 @@
       <div *ngIf=pwd.errors.pattern>Password is invalid</div>
     </div><br>
 
-    <!-- Confirm Password:
+    Confirm Password:
     <input type="password" #pwd1="ngModel"  ngValidateEqual="upass"
     pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$"
-    name="cpass" placeholder="Re-enter Password" required [(ngModel)]="user.confirmPassword"/><br>
+    name="cpass" placeholder="Re-Enter Password" required [(ngModel)]="userdto.confirmPassword"/><br>
     <div *ngIf="pwd1.invalid && pwd1.dirty" style="color:red;border-color:red;">
       <div *ngIf=pwd1.errors.required>Password is required</div>
       <div *ngIf="pwd1.hasError('notEqual') && pwd.valid">Password is not same</div>
-    </div> -->
+    </div>
 
-  <button class="btn btn-primary" type="submit" >Submit</button>
+  <button class="btn btn-primary" type="submit" [disabled]="regForm.form.invalid">Submit</button>
 </form>
-
+</fieldset><br>

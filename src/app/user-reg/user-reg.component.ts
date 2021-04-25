@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from "../User";
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { UserDto } from '../UserReg';
 
@@ -12,7 +12,7 @@ export class UserRegComponent implements OnInit {
   
   userdto:UserDto = new UserDto();
   
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private router:Router) { }
 
   ngOnInit():void{
   }
@@ -21,8 +21,17 @@ export class UserRegComponent implements OnInit {
     this.userService.registerUser(this.userdto).subscribe(
       ruser=>{
         console.log(ruser);
+        if(ruser!=null){
+          alert("Registered Successfully! Please check email for login credentials");
+          this.router.navigate(["/loginLink"]);
+        }
+        else{
+          alert("Email already exists....Please use different Email Id");
+          window.location.reload();
+        }
+        
       }
-    )
+    );
   }
 
  

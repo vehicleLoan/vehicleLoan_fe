@@ -1,0 +1,51 @@
+<div class="nav">
+  <button class = "navbar" [routerLink]="['/applyLink']">Personal Details</button>
+  <button class = "navbar" [routerLink]="['/employmentDetailsLink']">Employement Details</button>
+  <button class = "navbar" [routerLink]="['/vehicleDetailsLink']">Vehicle Details</button>
+  <button class = "navbar" [routerLink]="['/bankDetailsLink']">Bank Details</button>
+  <button class = "navbar" [routerLink]="['/uploadLink']">Upload Documents</button>
+  <button class = "navbar" [routerLink]="['/loanDetailsLink']">Loan Details</button>
+</div>         
+<hr><hr>    
+<fieldset>
+  <form  #myForm=ngForm (ngSubmit)="submit()" enctype="multipart/form-data">
+    <div class="form-group">
+      <div class="col-xs-6  col-xs-offset-3 align-center">
+                            
+        <h4>Upload Documents</h4><br>
+        <label>Aadhaar Card</label> 
+        <input type="file" #ad="ngModel" [(ngModel)]="aadharCard" name="aadhar" (change)="onFileChange($event)" placeholder="upload Aadhar" class="form-control" required>
+        <div *ngIf="ad.invalid && (ad.dirty || ad.touched)" style="color: red; border: red;">
+          <div *ngIf="ad.errors.required">
+            Upload Aadhaar.
+          </div>
+        </div><br>
+  
+        <label> Pan Card</label>
+        <input type="file" #pc="ngModel" [(ngModel)]="panCard" (change)="onFileChange1($event)" name="pan" placeholder="upload Pan card" class="form-control" required>
+        <div *ngIf="pc.invalid && (pc.dirty || pc.touched)" style="color: red; border: red;">
+          <div *ngIf="pc.errors.required">
+            Upload Pan Card.
+          </div>
+        </div><br>
+  
+        <label> Bank Statement Of 6 Months</label>
+        <input type="file" #bs="ngModel" [(ngModel)]="paySlip" name="bankstmnt" (change)="onFileChange2($event)" placeholder="upload Bank Statement" class="form-control" required>
+        <div *ngIf="bs.invalid && (bs.dirty || bs.touched)" style="color: red; border: red;">
+          <div *ngIf="bs.errors.required">
+            Upload Bank Statement.
+          </div>
+        </div><br>
+
+        <button type="submit" name="submit" value="submit"  [disabled]="myForm.form.invalid" class="submit">Save and Next</button>
+                          
+      </div>
+    </div> 
+  </form>
+</fieldset><br>         
+          
+  
+  
+  
+  
+  

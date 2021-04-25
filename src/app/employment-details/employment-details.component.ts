@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from '../customer';
+import { EmploymentDetais } from '../employmentDetails';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-employment-details',
@@ -8,15 +11,16 @@ import { Customer } from '../customer';
 })
 export class EmploymentDetailsComponent implements OnInit {
   
-  cust:Customer = new Customer();
+  cust:EmploymentDetais = new  EmploymentDetais();
   sal=false;
   self=false;
   pens=false;
   exEmi=false;
   
-  constructor() { }
+  constructor(private router:Router,private userservice:UserService) { }
 
   ngOnInit(): void {
+   
   }
 
   Noemi(){
@@ -40,6 +44,17 @@ export class EmploymentDetailsComponent implements OnInit {
     this.sal=false;
     this.pens=false;
   }
- 
+  
 
+
+  submit(){
+    this.cust.custId=Number(sessionStorage.getItem("custId")) ;
+   console.log(JSON.stringify(this.cust));
+    this.userservice.addEmployementDetails(this.cust).subscribe(
+      status=>{
+        console.log(status);
+      }
+    )
+    this.router.navigateByUrl('/vehicleDetailsLink');
+   }
 }

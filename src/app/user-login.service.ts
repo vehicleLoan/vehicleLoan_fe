@@ -11,6 +11,6 @@ export class UserLoginService {
   constructor(private httpclient:HttpClient) { }
 
   loginUser(user:loginUser):Observable<Boolean>{
-    return this.httpclient.post<Boolean>("http://localhost:9090/loginUser",user);
+    return this.httpclient.post<Boolean>("http://localhost:9090/loginCustomer",user);
   }
 }

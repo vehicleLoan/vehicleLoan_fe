@@ -14,6 +14,7 @@ export class LoginAdminComponent implements OnInit {
   constructor(private router:Router, private adminservice:AdminLoginService) { }
   
   ngOnInit(): void {
+    sessionStorage.removeItem("adminId");
   }
   
 
@@ -26,6 +27,7 @@ export class LoginAdminComponent implements OnInit {
           this.router.navigate(['/adminDashboardLink']);
         }else{
          this.router.navigate(['/loginAdminLink']);
+         alert("Invalid Credentials");
          window.location.reload();
         }
       }

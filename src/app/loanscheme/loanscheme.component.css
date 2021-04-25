@@ -1,0 +1,72 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Muli', 'Baloo Da 2', 'Montserrat', sans-serif;
+ }
+
+.background{
+    background-image: url('/assets/images/loan_scheme.jpg');
+    background-repeat: no-repeat;
+    height: fit-content;
+    background-size: cover;
+    background-position: center;
+    width: fit-content;
+    
+}
+
+.background::before{
+    content: "";
+    background-image: url('/assets/images/loan_scheme.jpg');
+    background-size: cover;
+    opacity: 0.2;
+    background-position: center;
+}
+.background::after{
+    content: "";
+    background-image: url('/assets/images/loan_scheme.jpg');
+    position: absolute;
+    z-index: -1;
+
+}
+.first,.second{
+    align-items: center;
+    background-color: wheat;
+}
+
+p{
+    font-size: 18px;
+    color:black;
+    margin-top: 10px;
+}
+
+h1{
+    font-size: 18px;
+    text-align: left;
+    margin-left: 36px;
+}
+
+
+li{
+    font-size: 16px;
+}
+
+.pre{
+    margin-top: 2px;
+    margin-left: 17px;
+    font-size: 16px;
+}
+
+td{
+    align-items: center;
+}
+
+.reg{
+    font-weight: bolder;
+    font-size: 16px;
+    color:black;
+}
+
+.readmore{
+     color: orangered;
+     font-size: 16px;
+     font-weight: bolder;
+}

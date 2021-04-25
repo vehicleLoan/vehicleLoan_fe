@@ -1,5 +1,5 @@
 .two,.car{
-   width:16.5cm; 
+   width:16.9cm; 
    height: fit-content;
 }
 
@@ -53,13 +53,18 @@ ul li:before{
 
 h3{
     text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .card {
     background-color: white;
-    padding: 10px;
+    padding: 30px;
     margin-top: 20px;
     overflow: hidden;
+    align-items: center;
+    margin-left: 20px;
   }
    
 .cc {
@@ -72,10 +77,13 @@ h3{
 .img1 {
     max-width: 400px;
     height: 150px;
-    margin-right: 19px;
+    margin-right: 10px;
     
 } 
 
-
+li{
+   font-size: 20px;
+   font-family: 'Times New Roman', Times, serif; 
+}
 
    

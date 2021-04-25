@@ -5,6 +5,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { FormsModule } from '@angular/forms';
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import { DatePipe } from "@angular/common";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -28,6 +32,10 @@ import { AdminClientsComponent } from './admin-clients/admin-clients.component';
 import { AdminRejectedComponent } from './admin-rejected/admin-rejected.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { UserRegComponent } from './user-reg/user-reg.component';
+import { UploadComponent } from './upload/upload.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ViewComponent } from './view/view.component';
+import { LoanschemeComponent } from './loanscheme/loanscheme.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +60,9 @@ import { UserRegComponent } from './user-reg/user-reg.component';
     AdminClientsComponent,
     AdminRejectedComponent,
     ForgotpasswordComponent,
+    UploadComponent,
+    ViewComponent,
+    LoanschemeComponent
   ],
   imports: [
     BrowserModule,
@@ -60,10 +71,13 @@ import { UserRegComponent } from './user-reg/user-reg.component';
     FormsModule,
     ValidateEqualModule,
     FontAwesomeModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatButtonToggleModule,
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

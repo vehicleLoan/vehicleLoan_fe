@@ -1,0 +1,43 @@
+h3{
+    text-decoration: underline;
+    text-align: center;
+}
+
+td,th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+  
+tr:hover {background-color: #ddd;}
+  
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3244e9;
+    color: white;
+    text-align: center;
+    font-weight: normal;
+}
+
+.close{
+    background-color:#3244e9;
+    outline: none;
+    color: white;
+    width: 200px;
+    padding: 0;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+
+}
+
+table{
+    width:100%;
+}
+
+img{
+    align-items: center;
+}

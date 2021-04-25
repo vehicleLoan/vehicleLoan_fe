@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AdminService } from '../admin.service';
+import { Loan } from '../Loan';
 
 @Component({
   selector: 'app-admin-rejected',
@@ -8,12 +10,18 @@ import { Router } from '@angular/router';
 })
 export class AdminRejectedComponent implements OnInit {
 
-  constructor(private router:Router) { }
-
+  constructor(private router:Router,private adminservice:AdminService) { }
+   loan:Loan[];
   ngOnInit(): void {
+    this.adminservice.viewRejectedUsers().subscribe(
+      data=>{
+        this.loan= data;
+        console.log(data);
+      }
+    );
   }
-
   logout(){
+    sessionStorage.removeItem("adminId");
     this.router.navigate(['/loginAdminLink']);
   }
 

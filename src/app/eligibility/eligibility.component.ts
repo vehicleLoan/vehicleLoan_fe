@@ -19,19 +19,27 @@ export class EligibilityComponent implements OnInit {
   public amount:number=0;
   public t:number; 
   public r:number;
+  public e:number;
 
   ngOnInit(): void {
   }
 
   submit(){
     this.r=this.roi/(12*100);
-    this.existing=(this.existing/this.income)*100;
-    this.t=(0.65-(this.existing))*this.income;
-    
+    if(this.existing==0){
+      this.e=(this.existing/this.income)*100;
+      this.t=(0.65)*this.income;
+      this.amount=this.t/(this.r*((Math.pow(1+this.r,this.loanterms))/(Math.pow(1+this.r,this.loanterms)-1)));
+    }
+    else{
+    this.e=(this.existing/this.income)*100;
+    this.t=((this.e)-0.65)*this.income;
     this.amount=this.t/(this.r*((Math.pow(1+this.r,this.loanterms))/(Math.pow(1+this.r,this.loanterms)-1)));
+    } 
   }
 
   apply(){
+    sessionStorage.removeItem("appForm");
     this.router.navigate(['/applyLink']);
   }
   

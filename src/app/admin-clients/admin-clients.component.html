@@ -6,7 +6,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>
-      <span style=" color:white;" class="ml-3 text-xl">LTI BANK</span>
+      <span style=" color:white;" class="ml-3 text-xl">EMI PE GAADI</span>
     </a>
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <a style=" color:white;" [routerLink]="['/adminDashboardLink']" class="mr-5 hover:text-gray-900">View Applications</a>
@@ -24,20 +24,24 @@
 
 
 
-  <table id="transactions" style="margin-top: 50px;margin-bottom: 50px;">
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Phone</th>
-        <th>Address</th>
-        <th>City</th>
-        <th>State</th>
-        <tr>
-            <td>Alex</td>
-            <td>Morphie</td>
-            <td>59191156</td>
-            <td>HYD</td>
-            <td>HYD</td>
-            <td>AP</td>
-        </tr>
+  <table id="transactions" style="margin-top: 5px;margin-bottom: 50px;">
+    <tr>    
+      <th>Loan Id</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Address</th>
+      <th>City</th>
+    </tr>
+    <tr *ngFor = "let loan of loan">
+      <td>{{loan.loanId}}</td>
+      <td>{{loan.customer.custFirstName}}</td>
+      <td>{{loan.customer.custLastName}}</td>
+      <td>{{loan.customer.email}}</td>
+      <td>{{loan.customer.phone}}</td>
+      <td>{{loan.customer.address}}</td>
+      <td>{{loan.customer.city}}</td> 
+    </tr>
   </table>
     

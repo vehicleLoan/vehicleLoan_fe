@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from '../customer';
 import { ForgotPasswordService } from '../forgot-password.service';
 import { forgotpass } from '../forgotpass';
@@ -14,7 +15,7 @@ export class ForgotpasswordComponent implements OnInit {
   pass:forgotpass = new forgotpass();
   reset:resetpass = new resetpass();
   cust_Id:number;
-  constructor(private forgotpassword:ForgotPasswordService) { }
+  constructor(private forgotpassword:ForgotPasswordService,private router:Router) { }
    show:boolean = false;
   ngOnInit(): void {
   }
@@ -32,6 +33,7 @@ export class ForgotpasswordComponent implements OnInit {
           this.show=true;
         }else{
           window.location.reload();
+          alert("Invalid Credentials")
         }
       }
     );
@@ -43,6 +45,8 @@ export class ForgotpasswordComponent implements OnInit {
     this.forgotpassword.resetPassword(this.reset,this.cust_Id).subscribe(
       show=>{
         //console.log(show);
+        this.router.navigate(['/loginLink']);
+        alert("Password Changed successfully")
       }
     );
     

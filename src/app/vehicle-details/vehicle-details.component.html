@@ -1,27 +1,29 @@
 <div class="nav">
-    <span  [routerLink]="['/applyLink']">Personal Details</span> >>
-    <span  [routerLink]="['/employmentDetailsLink']">Employement Details</span> >> 
-    <span [routerLink]="['/vehicleDetailsLink']">Vehicle Details</span> >> 
-    <span [routerLink]="['/loanDetailsLink']">Loan Details</span> >>
-    <span [routerLink]="['/bankDetailsLink']">Bank Details</span><br><br>
-</div>   
+  <button class = "navbar" [routerLink]="['/applyLink']">Personal Details</button>
+  <button class = "navbar" [routerLink]="['/employmentDetailsLink']">Employement Details</button>
+  <button class = "navbar" [routerLink]="['/vehicleDetailsLink']">Vehicle Details</button>
+  <button class = "navbar" [routerLink]="['/bankDetailsLink']">Bank Details</button>
+  <button class = "navbar" [routerLink]="['/uploadLink']">Upload Documents</button>
+  <button class = "navbar" [routerLink]="['/loanDetailsLink']">Loan Details</button>
+</div>      
 <hr><hr>
-<form  #myForm=ngForm (ngSubmit)="myForm">
+<fieldset>
+<form  #myForm=ngForm (ngSubmit)="submit()">
   <div class="form-group">
     <div class="col-xs-6  col-xs-offset-3 align-center">
       <h4>Vehicle Details</h4><br>
       <div class="form-group" >                  
-          <label class="control-label" >Type of vehicle</label>
-          <select class="form-control"  required>
+          <label class="control-label">Type of vehicle</label>
+          <select class="form-control" [(ngModel)]="cust.vehicleType" name="vehicleType" required>
             <option disabled>Select one</option>
-            <option value="two Wheeler" >two Wheeler </option>
-            <option value="Auto"> Auto Loan</option>
-            <option value="Car">Car Loan</option>
+            <option value="two Wheeler"name="two">Two Wheeler </option>
+            <option value="Auto" name="auto"> Auto Loan</option>
+            <option value="Car" name="car">Car Loan</option>
           </select>
         </div><br>
                       
           <label >State Of Purchase</label>
-          <input type="text" #pr="ngModel" [(ngModel)]="StateOfPurchase"  placeholder="State" class="form-control "name="state" required>
+          <input type="text" #pr="ngModel" [(ngModel)]="cust.vehicleState"  placeholder="Enter State" class="form-control "name="state" required>
           <div *ngIf="pr.invalid && (pr.dirty || pr.touched)" style="color: red; border: red;">
             <div *ngIf="pr.errors.required">
               Enter State Of Purchase
@@ -29,7 +31,7 @@
           </div><br>
                         
           <label >City Of Purchase</label>
-          <input type="text" #cp="ngModel" [(ngModel)]="CityOfPurchase" placeholder="city" class="form-control "name="city" required>
+          <input type="text" #cp="ngModel" [(ngModel)]="cust.vehicleCity" placeholder="Enter City" class="form-control "name="city" required>
           <div *ngIf="cp.invalid && (cp.dirty || cp.touched)" style="color: red; border: red;">
             <div *ngIf="cp.errors.required">
               Enter City Of Purchase
@@ -37,7 +39,7 @@
           </div><br>
     
           <label >Vehicle Make</label>
-          <input type="text" #vm="ngModel" [(ngModel)]="VehicleMake" placeholder="Vehicle Make" class="form-control "name="vehiclemake" required>
+          <input type="text" #vm="ngModel" [(ngModel)]="cust.vehicleMake" placeholder="Enter Vehicle Make" class="form-control "name="vehiclemake" required>
           <div *ngIf="vm.invalid && (vm.dirty || vm.touched)" style="color: red; border: red;">
             <div *ngIf="vm.errors.required">
               Please Enter Required Field
@@ -45,16 +47,17 @@
           </div><br>
     
           <label>Vehicle Model</label>
-          <input type="text" #mo="ngModel" [(ngModel)]="VehicleModel" placeholder="Vehicle Model" class="form-control" name="vehiclemodel" required>
+          <input type="text" #mo="ngModel" [(ngModel)]="cust.vehicleModel" placeholder="Enter Vehicle Model" class="form-control" name="vehiclemodel" required>
           <div *ngIf="mo.invalid && (mo.dirty || mo.touched)" style="color: red; border: red;">
             <div *ngIf="mo.errors.required">
               Please Enter Required Field
             </div>
           </div><br>                    
                             
-          <button type="submit" name="submit"  [routerLink]="['/loanDetailsLink']" value="Next" [disabled]="myForm.form.invalid" class="btn btn-primary">Next</button>
+          <button type="submit" name="submit" value="Next" [disabled]="myForm.form.invalid" class="submit">Save and Next</button>
   
     </div>
   </div>
 </form>
+</fieldset><br>
     

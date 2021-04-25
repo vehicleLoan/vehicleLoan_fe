@@ -1,69 +1,91 @@
 html {
-    box-sizing: border-box;
-  }
-  
-  * {
-    box-sizing: inherit;
-  }
-  
-  form {
-    border: .5em solid lighten(deepskyblue, 30%);
-    border-radius: .2em;
-    max-width: 400px;
-    margin: 3em auto;
-    padding: 1em;
-  }
-  
-  h4 {
-    text-align: center;
-    font-size: 2em;
-    margin-top: 0;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: .5em;
-    cursor: pointer;
-  }
-  
-  input[type="text"],
-  input[type="file"],select {
-    display: block;
-    width: 100%;
-    padding: .5em;
-    transition: .5s ease-out; 
-  
-  }
-  
-  button,
-  input[type="submit"] {
-    display: inline;
-    margin: 0px 0px 0px 170px;
-    border: none;
-    padding: 1em;
-    width: fit-content;
-    font-weight: bold;
-    color: white;
-    background: orangered;
-    text-transform: uppercase;
-    font-size: .8em;
-    transition: .15s ease-out;
-    
-  }
-  
-  p:last-of-type {
-    margin-bottom: 0;
-  }
+  box-sizing: border-box;
+}
 
-  span{
-    color: rgb(55, 29, 202); 
-    font-size: large; 
-    font-weight: bold;
-  }
+* {
+  box-sizing: inherit;
+}
 
-  .nav{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+form {
+  border: .5em solid lighten(deepskyblue, 30%);
+  border-radius: .2em;
+  max-width: 400px;
+  margin: 3em auto;
+  padding: 1em;
+}
+
+h4 {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: .5em;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="file"],select {
+  display: block;
+  width: 100%;
+  padding: .5em;
+  transition: .5s ease-out; 
+
+}
+
+.submit {
+  display: inline;
+  margin: 0px 0px 0px 145px;
+  border: none;
+  padding: 1em;
+  width: fit-content;
+  font-weight: bold;
+  color: white;
+  background: orangered;
+  text-transform: uppercase;
+  font-size: .8em;
+  transition: .15s ease-out;
   
+}
+
+p:last-of-type {
+  margin-bottom: 0;
+}
+
+span{
+  color: rgb(55, 29, 202); 
+  font-size: large; 
+  font-weight: bold;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+fieldset{
+  width: 50%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin-left: 330px;
+}
+
+.navbar{
+  cursor:pointer;
+  text-transform: uppercase;
+  border: 2px solid orange;
+  padding: 1em;
+  width: fit-content;
+  font-weight: bold;
+  
+}
+
+.navbar:hover{
+  background-color: orange;
+  font-size: .9em;
+  transition: .8s ease-out;
+}

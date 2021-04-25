@@ -70,3 +70,7 @@ button {
 .tpbtn{
   position: relative;
 }
+
+.submit:hover,.apply:hover{
+   background-color: orange;
+}

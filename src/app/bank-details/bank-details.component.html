@@ -1,18 +1,20 @@
 <div class="nav">
-    <span [routerLink]="['/applyLink']"  >Personal Details</span> >>
-    <span  [routerLink]="['/employmentDetailsLink']">Employement Details</span> >> 
-    <span [routerLink]="['/vehicleDetailsLink']">Vehicle Details</span> >> 
-    <span [routerLink]="['/loanDetailsLink']">Loan Details</span>>>
-    <span [routerLink]="['/bankDetailsLink']">Bank Details</span><br><br>
-</div>   
-<hr><hr>     
-  <form  #myForm=ngForm (ngSubmit)="myForm">
+  <button class = "navbar" [routerLink]="['/applyLink']">Personal Details</button>
+  <button class = "navbar" [routerLink]="['/employmentDetailsLink']">Employement Details</button>
+  <button class = "navbar" [routerLink]="['/vehicleDetailsLink']">Vehicle Details</button>
+  <button class = "navbar" [routerLink]="['/bankDetailsLink']">Bank Details</button>
+  <button class = "navbar" [routerLink]="['/uploadLink']">Upload Documents</button>
+  <button class = "navbar" [routerLink]="['/loanDetailsLink']">Loan Details</button>
+</div>    
+<hr><hr>
+<fieldset>
+  <form  #myForm=ngForm (ngSubmit)="submit()">
     <div class="form-group">
       <div class="col-xs-6  col-xs-offset-3 align-center">
         <h4>Bank Details</h4><br>
   
         <label >Bank Name</label>
-        <input type="text" #bn="ngModel" [(ngModel)]="bankName"  placeholder="Example SBI" class="form-control "name="bname" required>
+        <input type="text" #bn="ngModel" [(ngModel)]="cust.bankName"  placeholder="Example SBI" class="form-control "name="bname" required>
         <div *ngIf="bn.invalid && (bn.dirty || bn.touched)" style="color: red; border: red;">
           <div *ngIf="bn.errors.required">
             Bank Name is Required.
@@ -20,7 +22,7 @@
         </div><br>
   
         <label >Branch</label>
-        <input type="text" #br="ngModel" [(ngModel)]="branch"  placeholder="Example Bhandup" class="form-control "name="branch" required >
+        <input type="text" #br="ngModel" [(ngModel)]="cust.branchName"  placeholder="Example Bhandup" class="form-control "name="branch" required >
         <div *ngIf="br.invalid && (br.dirty || br.touched)" style="color: red; border: red;">
           <div *ngIf="br.errors.required">
             Branch Name is Required.
@@ -28,57 +30,35 @@
         </div><br>
   
         <label >Account Number</label>
-        <input type="text" #an="ngModel" minlength="12" [(ngModel)]="accountNo" placeholder="Example SBI56478332" class="form-control" name="acno" required>
+        <input type="text" #an="ngModel" [(ngModel)]="cust.accountNumber" placeholder="Example SBI56478332" class="form-control" name="acno" required>
         <div *ngIf="an.invalid && (an.dirty || an.touched)" style="color: red; border: red;">
           <div *ngIf="an.errors.required">
               Account Number is required.
           </div>
           <div *ngIf="an.errors.minlength">
-              Invalid...Must contain 12 Characters
+              Invalid...Must contain min 9 Characters
           </div>
         </div><br>
   
         <label>IFSC Code</label>
-        <input type="text" #cd="ngModel" minlength="12" [(ngModel)]="ifscCode" placeholder="Example SBI37489202" class="form-control" name="ifsc" required>
+        <input type="text" #cd="ngModel"  minlength="11" [(ngModel)]="cust.ifsc" placeholder="Example SBI37489202" class="form-control" name="ifsc" required>
         <div *ngIf="cd.invalid && (cd.dirty || cd.touched)" style="color: red; border: red;">
           <div *ngIf="cd.errors.required">
             IFSC code is required.
           </div>
           <div *ngIf="cd.errors.minlength">
-            Invalid...Must Contain 20 Characters
+            Invalid...Must Contain 11 Characters
           </div>
         </div><br><br>
                             
-        <h4>Upload Documents</h4><br>
-        <label>Aadhar Card</label> 
-        <input type="file" #ad="ngModel" [(ngModel)]="aadhar" name="aadhar" placeholder="upload Aadhar" class="form-control" required>
-        <div *ngIf="ad.invalid && (ad.dirty || ad.touched)" style="color: red; border: red;">
-          <div *ngIf="ad.errors.required">
-            Upload Aadhar.
-          </div>
-        </div><br>
-  
-        <label> Pan Card</label>
-        <input type="file" #pc="ngModel" [(ngModel)]="pan" name="pan" placeholder="upload Pan card" class="form-control" required>
-        <div *ngIf="pc.invalid && (pc.dirty || pc.touched)" style="color: red; border: red;">
-          <div *ngIf="pc.errors.required">
-            Upload Pan Card.
-          </div>
-        </div><br>
-  
-        <label> Bank Statement Of 6 Months</label>
-        <input type="file" #bs="ngModel" name="bankstmnt" [(ngModel)]="bankst" placeholder="upload Bank Statement" class="form-control" required>
-        <div *ngIf="bs.invalid && (bs.dirty || bs.touched)" style="color: red; border: red;">
-          <div *ngIf="bs.errors.required">
-            Upload Bank Statement.
-          </div>
-        </div><br>
+        
 
-        <button type="submit" name="submit" value="submit"  [disabled]="myForm.form.invalid" class="btn btn-primary">Submit</button>
+        <button type="submit" name="submit" value="submit" [disabled]="myForm.form.invalid" class="submit">Save and Next</button>
                           
       </div>
     </div>
   </form>
+</fieldset><br>
           
           
   

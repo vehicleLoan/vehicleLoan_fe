@@ -1,36 +1,50 @@
-.authorities-section h2 {
-	font-weight: 700;
-	margin-bottom: 90px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-.authoritie-item {
-	padding-right: 15px;
-	margin-bottom: 30px;
-}
-
-.authoritie-item img {
-	margin-bottom: 30px;
+body {
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .img1{
     float: left;
+
 }
 
-.authoritie-item h4 {
-	padding-right: 30px;
-	font-weight: 700;
-	margin-bottom: 30px;
-	line-height: 1.4;
-}
-
-.authoritie-item p {
-	margin-bottom: 30px;
-}
-
-.authoritie-item .readmore img {
-	margin-bottom: 0;
-}
-
-td{
+tr{
     text-align: center;
+	margin-left:50px;
+}
+
+.left{
+	float:left; 
+	width:25%;
+	height:280px;
+	align-items: center;
+	justify-content: center;
+	justify-items: center;
+}
+
+.main{
+	float:left;
+    width:75%;
+    height:fit-content;
+
+}
+.bottom{
+	margin-top: 60px;
+	margin-left: 40px;
+	text-align: center;
+}
+
+table{
+	display: inline-table;
+	text-align: center;
+	justify-items: center;
+}
+h3{
+	text-decoration: underline;
+	margin-bottom: 0px;
+}
+
+p{
+	margin-bottom: 5px;
 }

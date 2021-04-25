@@ -13,10 +13,12 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './landing/landing.component';
 import { LoanDetailsComponent } from './loan-details/loan-details.component';
+import { LoanschemeComponent } from './loanscheme/loanscheme.component';
 import { LoginAdminComponent } from './login-admin/login-admin.component';
 import { LoginComponent } from './login/login.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TandcComponent } from './tandc/tandc.component';
+import { UploadComponent } from './upload/upload.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { UserRegComponent } from './user-reg/user-reg.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
@@ -68,6 +70,12 @@ const routes: Routes = [
       },
       {
         path:"bankDetailsLink",component:BankDetailsComponent
+      },
+      {
+        path:"uploadLink",component:UploadComponent
+      },
+      {
+        path:"loanSchemeLink",component:LoanschemeComponent
       },
       {
         path:"privacyPolicyLink",component:PrivacyPolicyComponent
