@@ -24,7 +24,7 @@ export class UserDashboardComponent implements OnInit {
   public loanterms:number;
   public emi:number;
   public r:number;
-
+  paid:boolean[]=[false];
  
   view:boolean=false;
   dis:boolean=false;
@@ -43,7 +43,8 @@ export class UserDashboardComponent implements OnInit {
    
   }
   todayDate=this.datePipe.transform(new Date(),'yyyy-MM-dd');
-  ngOnInit(): void {
+  
+ngOnInit(): void {
     if(Number(sessionStorage.getItem("custId"))>0){
     this.custId=Number(sessionStorage.getItem("custId"));
     this.service.viewUserByCustId(this.custId).subscribe(
@@ -114,6 +115,7 @@ export class UserDashboardComponent implements OnInit {
   
   logout(){
     sessionStorage.removeItem("custId");
+    sessionStorage.removeItem("formDetails");
     this.router.navigate(['/loginLink']);
   }
 
@@ -139,6 +141,7 @@ export class UserDashboardComponent implements OnInit {
   }
 
   pop(index){
+    this.paid[index]=true;
     this.dis=true;
     this.amountt = this.lnamt[index];
     this.roii = this.roii;
@@ -151,12 +154,12 @@ export class UserDashboardComponent implements OnInit {
    if(this.lnamt[index]>=this.rem[index] && this.loantermss>1 ){
     
     this.rr=this.roii/(12*100);
-     this.emii = this.amountt*this.rr*((Math.pow(1+this.rr,this.loantermss))/(Math.pow(1+this.rr,this.loantermss)-1));
+    this.emii = this.amountt*this.rr*((Math.pow(1+this.rr,this.loantermss))/(Math.pow(1+this.rr,this.loantermss)-1));
     this.rem[index]=this.emii;
     
-     this.amountt = this.amountt-this.emii;
+    this.amountt = this.amountt-this.emii;
  
-     this.lnamt[index]=this.amountt;
+    this.lnamt[index]=this.amountt;
     this.amountt=this.lnamt[index];
      
      this.loantermss=this.loantermss-1;

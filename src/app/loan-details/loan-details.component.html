@@ -30,9 +30,9 @@
 
         <label class="control-label">Any Existing Loan</label>
         <div class="form-control">
-          <input type="radio"  required name="existing" [(ngModel)]="cust.existingloan" (click)="emi()">
+          <input type="radio"  required name="existing" (click)="emi()">
             Yes
-          <input type="radio" value="Not Applicable" required name="existing" [(ngModel)]="cust.existingloan" (click)="Noemi()">
+          <input type="radio" value="Not Applicable" required name="existing" (click)="Noemi()">
             No                    
         </div><br>
 
@@ -63,15 +63,14 @@
 
         </div>          
         <div *ngIf="display">
-          <button type="submit"  name="Next" value="Next" [disabled]="myForm.form.invalid " class="submit">Submit</button>                
+          <button type="submit"  name="Next" value="Next" [disabled]="myForm.form.invalid " class="submit">Save and Next</button>                
         </div>
       </div>
     </div>
   </div>
 </form>
-</fieldset><br>
-
-
+</fieldset>
+<br>
   
          
 

@@ -5,7 +5,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
       </svg>
-      <span style=" color:white;margin-bottom: 10px;" class="ml-3 text-xl">EMI PE GAADI</span>
+      <span style=" color:white;margin-bottom: 10px;" class="ml-3 text-xl">Loan on Wheels</span>
     </a>
     <nav id="helements" class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <a style=" color:white;" [routerLink]="['/userDashboardLink']" class="mr-5 hover:text-gray-900">Home</a>
@@ -46,7 +46,7 @@
       <div class="link_title">
         <i class="fa fa-calendar" aria-hidden="true"></i>
         <!-- <i class="fa fa-clock-o" aria-hidden="true"></i> -->
-        <a style="font-size: 22.8px;" (click)="scheduler()">EMI Scheduler</a>
+        <a style="font-size: 22.8px;" (click)="scheduler()">Pay EMI</a>
       </div>
    </li>
     </ul>
@@ -86,6 +86,7 @@
 
 
 <table *ngIf="show" id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
+  <section>Loan Details</section>  <br>
   <tr>
   <th>Loan Id</th>
   <th>Loan Amount</th>
@@ -109,6 +110,7 @@
 
 <table *ngIf="view" id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
   <table  id="transactions" style="margin-bottom: 50px;margin-top: 30px;">
+    <section>Pay Emi</section> <br>
      <tr>
     <th>SR. No</th>
     <th>Loan Id</th>
@@ -123,11 +125,18 @@
         <td>{{i+1}}</td>
         <td>{{loan.loanId}}</td>
         <td>{{lnamt[i] | currency: 'INR':true:'1.1'}}</td>
-     
         <td>{{tenu[i]}}</td>
         <td>{{rem[i] | currency: 'INR':true:'1.1' }}</td>
-        <td><input type="date" [min]="todayDate" required></td>
-       <td><button class="approveButton" (click)="pop(i)">Pay EMI</button><br><br></td> 
+        <div>
+        <td><input type="date" #em="ngModel" name="d" [(ngModel)]="dt" [min]="todayDate"  required ></td>
+        <div style="display: inline;" *ngIf="em.invalid && (em.dirty || em.touched)" style="color: red; border-color: red; font-size: 15px;">
+        <div *ngIf="em.errors.required">
+         date is required.
+        </div>
+        </div>
+        </div>
+     <td><button [ngClass]="paid[i]?'disable':'approveButton'"  type="submit" (click)="pop(i)" [disabled]="em.invalid || paid[i]">Pay EMI</button><br><br></td> 
+    <br><br>
     </tr> 
   
   </table>

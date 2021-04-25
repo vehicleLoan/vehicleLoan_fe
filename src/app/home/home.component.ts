@@ -32,8 +32,8 @@ export class HomeComponent implements OnInit {
       thumbImage: '../assets/images/scroll2.jpg'
     }, 
     {
-      image: '../assets/images/scroll3.jpg',
-      thumbImage: '../assets/images/scroll3.jpg',
+      image: '../assets/images/loans/3.jpg',
+      thumbImage: '../assets/images/loans/3.jpg',
       
     },
     {

@@ -220,5 +220,11 @@ float:left;
 -ms-transform:rotate(360deg);
 transform:rotate(360deg);  
 } 
-     
+ 
+.approveButton{
+  color:black;
+}
+.disable{
+  color:darkgrey;
+}
   

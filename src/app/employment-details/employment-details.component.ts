@@ -20,7 +20,7 @@ export class EmploymentDetailsComponent implements OnInit {
   constructor(private router:Router,private userservice:UserService) { }
 
   ngOnInit(): void {
-   
+    this.cust=JSON.parse(sessionStorage.getItem("formDetails"));
   }
 
   Noemi(){
@@ -49,7 +49,8 @@ export class EmploymentDetailsComponent implements OnInit {
 
   submit(){
     this.cust.custId=Number(sessionStorage.getItem("custId")) ;
-   console.log(JSON.stringify(this.cust));
+    localStorage.setItem("appForm",JSON.stringify(this.cust));
+    console.log(JSON.stringify(this.cust));
     this.userservice.addEmployementDetails(this.cust).subscribe(
       status=>{
         console.log(status);
