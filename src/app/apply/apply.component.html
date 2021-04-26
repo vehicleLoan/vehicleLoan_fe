@@ -1,3 +1,12 @@
+<div class="topnav">
+  <ul style="list-style-type: none;">
+    <img src="../assets/images/LoanLogo.jpg" width=15% height="75px" class="logo">
+    <li><a [routerLink]="['/userDashboardLink']">Dashboard</a></li>
+    <li><button class="dropbtn" (click)="logout()"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Logout</button></li>
+  </ul>
+</div>
+
+<br>
 <div class="nav">
   <button class = "navbar" [routerLink]="['/applyLink']">Personal Details</button>
   <button class = "navbar" [routerLink]="['/employmentDetailsLink']">Employement Details</button>
@@ -18,7 +27,7 @@
   
       <label>First Name</label>
       <input type="text" placeholder="Enter First Name" #nm="ngModel" name="fname" 
-      minlength="3" class="form-control" required  [(ngModel)]="cust.custFirstName" >
+      minlength="3" class="border py-2 px-3 text-blue" required pattern="^[a-zA-Z]+$" [(ngModel)]="cust.custFirstName" >
       <div *ngIf="nm.invalid && (nm.dirty || nm.touched)" style="color: red; border-color: red;">
         <div *ngIf="nm.errors.required">
          First Name is required.
@@ -26,17 +35,23 @@
         <div *ngIf="nm.errors.minlength">
           First Name must be at least 3 characters long.
         </div>
+        <div *ngIf="nm.errors.pattern">
+          First Name must contain alphabets only.
+        </div>
       </div><br>
       
       <label> Last Name</label>
       <input type="text" placeholder="Enter Last Name" name="lname"
-       class="form-control" required  minlength="4" [(ngModel)]="cust.custLastName" #ln="ngModel">
+       class="form-control" required  pattern="^[a-zA-Z]+$" minlength="1" [(ngModel)]="cust.custLastName" #ln="ngModel">
       <div *ngIf="ln.invalid && (ln.dirty || ln.touched)" style="color: red; border-color: red;">
         <div *ngIf="ln.errors.required">
           Last Name is required.
         </div>
         <div *ngIf="ln.errors.minlength">
-          Last Name must be at least 4 characters long.
+          Last Name must be at least 1 characters long.
+        </div>
+        <div *ngIf="ln.errors.pattern">
+          Last Name must contain alphabets only.
         </div>
       </div><br>
       
@@ -84,14 +99,14 @@
       </div><br>
 
       <label>Address</label>
-      <input type="text"  class="form-control" #ad="ngModel" minlength="20"  name="address" required
+      <input type="text"  class="form-control" #ad="ngModel" minlength="10"  name="address" required
       placeholder="Enter Address" [(ngModel)]="cust.address">
       <div *ngIf="ad.invalid && (ad.dirty || ad.touched)" style="color: red; border-color: red;">
         <div *ngIf="ad.errors.required">
          Adress is required
         </div>
         <div *ngIf="ad.errors.minlength">
-          Address length should be more than 15 characters
+          Address length should be more than 10 characters
         </div>
       </div><br>
 

@@ -1,5 +1,6 @@
 
 body {
+  box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
  
@@ -11,7 +12,7 @@ body {
 
 
 .sidenav {
-  width: 70px;
+  width: 10px;
   position: static;
   z-index: 1;
   background: rgb(238, 238, 238);
@@ -146,8 +147,9 @@ backface-visibility: hidden;
 {
 position:relative;
 background:#ccc; 
-width:300px;
+width: 190px;
 height:70px;
+margin-left: -35px;
 margin-bottom:5px;
 }
 .link_bg
@@ -228,3 +230,50 @@ transform:rotate(360deg);
   color:darkgrey;
 }
   
+/* EXtra for Header */
+
+.header{
+  text-align: center;
+  background: white;
+  width: 100%;
+
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: orangered;
+  width: 100%;
+  height: 75px;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  font-weight: bold;
+  font-size: medium;
+  padding: 14px;
+  text-decoration: none;
+  letter-spacing: 1px;
+  height: 60px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.logo{
+ float: left;
+ margin-left: -38px;
+ margin-top: -15px;
+ margin-right: 800px;
+}  
+
+.dropbtn {
+  cursor: pointer;
+  background-color: orangered;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 14px;
+}  

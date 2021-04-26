@@ -45,4 +45,10 @@ export class LoanDetailsComponent implements OnInit {
       }
     )
   }
+
+  logout(){
+    sessionStorage.removeItem("custId");
+    sessionStorage.removeItem("formDetails");
+    this.router.navigate(['/loginLink']);
+  }
 }

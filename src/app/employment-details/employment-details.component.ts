@@ -58,4 +58,10 @@ export class EmploymentDetailsComponent implements OnInit {
     )
     this.router.navigateByUrl('/vehicleDetailsLink');
    }
+
+   logout(){
+    sessionStorage.removeItem("custId");
+    sessionStorage.removeItem("formDetails");
+    this.router.navigate(['/loginLink']);
+  }
 }

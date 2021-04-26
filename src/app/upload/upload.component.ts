@@ -46,4 +46,10 @@ export class UploadComponent implements OnInit {
     )
   } 
 
+  logout(){
+    sessionStorage.removeItem("custId");
+    sessionStorage.removeItem("formDetails");
+    this.router.navigate(['/loginLink']);
+  }
+
 }

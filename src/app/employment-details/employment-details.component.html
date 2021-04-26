@@ -1,3 +1,11 @@
+<div class="topnav">
+  <ul style="list-style-type: none;">
+    <img src="../assets/images/LoanLogo.jpg" width=15% height="75px" class="logo">
+    <li><a [routerLink]="['/userDashboardLink']">Dashboard</a></li>
+    <li><button class="dropbtn" (click)="logout()"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;Logout</button></li>
+  </ul>
+</div>
+<br>
 <div class="nav">
   <button class = "navbar" [routerLink]="['/applyLink']">Personal Details</button>
   <button class = "navbar" [routerLink]="['/employmentDetailsLink']">Employement Details</button>
@@ -53,7 +61,7 @@
   
     <div class="form-group">
         <label>Profession</label>
-        <select class="form-control" id="exampleFormControlSelect1" [(ngModel)]="cust.profession">
+        <select class="form-control" id="exampleFormControlSelect1" name="profession" [(ngModel)]="cust.profession">
             <option value="Goverment Employee" name="gov" >Goverment Employee </option>
             <option value="Medical Professional" name="medical" >Medical Professional</option>
             <option value="Engineer" name="engineer">Engineer</option>
@@ -94,7 +102,7 @@
         </div><br>
   
         <label>Annual Salary</label>
-        <input type="number"  #al="ngModel" pattern="^[0-9]{5,7}$" [(ngModel)]="cust.annualSal" placeholder="Enter Annual Salary" class="form-control" name="annualSal" required>
+        <input type="number"  #al="ngModel" pattern="^[0-9]{5,}$" [(ngModel)]="cust.annualSal" placeholder="Enter Annual Salary" class="form-control" name="annualSal" required>
           <div *ngIf="al.invalid && (al.dirty || al.touched)" style="color: red; border-color: red;">
           <div *ngIf="al.errors.required">
             Please enter  numbers only
@@ -123,7 +131,7 @@
           <form #pensionForm=ngForm (ngSubmit)="submit()">
            <div   class="pensioner" [style.display]="pens?  'block' : 'none' "> 
             <label>Annual income</label>
-            <input type="number"  #at="ngModel"   pattern="^[0-9]{5,7}$" [(ngModel)]="cust.annualSal" placeholder="Enter Annual Salary" class="form-control" name="income" required>
+            <input type="number"  #at="ngModel"   pattern="^[0-9]{5,}$" [(ngModel)]="cust.annualSal" placeholder="Enter Annual Salary" class="form-control" name="income" required>
               <div *ngIf="at.invalid && (at.dirty || at.touched)" style="color: red; border-color: red;">
               <div *ngIf="at.errors.required">
                 Please Enter Numbers Only

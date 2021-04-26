@@ -1,31 +1,7 @@
-*{
-    box-sizing: border-box;
-    font-family: "Muli", "Baloo Da 2", "Montserrat", sans-serif;
+a,th,td{
+  font-family: "Muli", "Baloo Da 2", "Montserrat", sans-serif;
   }
-  
-  .topnav {
-    overflow: hidden;
-    text-decoration: none;
-    background-color: orangered;
-    width: 100%;
-    height: 75px;
-    margin: auto;
-  }
-  
-  
-  .topnav ul {
-    list-style-type: none;  /*to remove bullets from list */
-    display: inline;
-    float: right;
-    text-decoration: none;
-    float: left;
-  } 
-  
-  .topnav ul li{
-    display: inline;
-    margin: 20px;
-    text-decoration: none;
-  }
+
   
   #transactions {
     float: left;
@@ -53,17 +29,56 @@
     text-align: center;
   }
   
-  a:hover {
-    color:rgb(231, 45, 12);
+  a:hover{
+       background-color: orange;
   }
   
-  #searchBox{
-    width: 350px;
-    height: 50px;
-    float:right;
-    margin: 50px;
-    border-style:ridge;
-    border-radius: 20px;
+  .header{
+    text-align: center;
+    background: white;
+    width: 100%;
+  
   }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: orangered;
+    width: 100%;
+    height: 75px;
+  }
+  
+  .topnav a {
+    float: left;
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+    padding: 14px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    height: 60px;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .logo{
+   float: left;
+   margin-left: -38px;
+   margin-top: -15px;
+   margin-right: 800px;
+  }  
+  
+  .dropbtn {
+    margin-top: 14px;
+    background-color: white;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 100px;
+    padding: 5px 14px;
+    cursor: pointer;
+  } 
+
   
   

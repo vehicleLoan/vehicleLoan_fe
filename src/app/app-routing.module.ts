@@ -56,24 +56,7 @@ const routes: Routes = [
       {
         path:"emiCalcLink",component:EmiCalcComponent
       },
-      {
-        path:"applyLink",component:ApplyComponent
-      },
-      {
-        path:"employmentDetailsLink",component:EmploymentDetailsComponent
-      },
-      {
-        path:"vehicleDetailsLink",component:VehicleDetailsComponent
-      },
-      {
-        path:"loanDetailsLink",component:LoanDetailsComponent
-      },
-      {
-        path:"bankDetailsLink",component:BankDetailsComponent
-      },
-      {
-        path:"uploadLink",component:UploadComponent
-      },
+     
       {
         path:"loanSchemeLink",component:LoanschemeComponent
       },
@@ -86,7 +69,24 @@ const routes: Routes = [
     ]
   },
 
-  
+  {
+    path:"applyLink",component:ApplyComponent
+  },
+  {
+    path:"employmentDetailsLink",component:EmploymentDetailsComponent
+  },
+  {
+    path:"vehicleDetailsLink",component:VehicleDetailsComponent
+  },
+  {
+    path:"loanDetailsLink",component:LoanDetailsComponent
+  },
+  {
+    path:"bankDetailsLink",component:BankDetailsComponent
+  },
+  {
+    path:"uploadLink",component:UploadComponent
+  },
   {
     path:"userDashboardLink",component:UserDashboardComponent
   },

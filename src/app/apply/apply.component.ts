@@ -40,5 +40,9 @@ export class ApplyComponent implements OnInit {
     this.router.navigate(['/employmentDetailsLink']);
   }
   
-
+  logout(){
+    sessionStorage.removeItem("custId");
+    sessionStorage.removeItem("formDetails");
+    this.router.navigate(['/loginLink']);
+  }
 }

@@ -4,11 +4,10 @@
 }
 
 .header{
-    padding: 10px;
     text-align: center;
     background: white;
     width: 100%;
-    margin: auto;
+
 }
 
 .footer {
@@ -44,8 +43,7 @@
     overflow: hidden;
     background-color: orangered;
     width: 100%;
-    
-
+    height: 75px;
 }
  
 .topnav a {
@@ -56,15 +54,17 @@
     padding: 14px;
     text-decoration: none;
     letter-spacing: 1px;
-    height: 70px;
-    /* flex: flex-wrap;
-    align-items: center; 
-    justify-content: center; */
+    height: 60px;
+    font-size: 20px;
     text-align: center;
+    margin-top: 10px;
 }
 
 .logo{
    float: left;
+   margin-left: -38px;
+   margin-top: -15px;
+   margin-right: 800px;
 }  
 
 .dropbtn {
@@ -72,11 +72,12 @@
     color: black;
     font-weight: bold;
     font-size: medium;
-    padding: 13px;
-    font-size: 16px;
+    padding: 14px;
     border: none;
     cursor: context-menu;
     outline: none;
+    font-size: 20px;
+    margin-top: 9.5px;
   }
 .dropdown {
     float: left;
@@ -87,7 +88,7 @@
     display: none;
     position: absolute;
     background-color: orangered;
-    z-index: 2;
+    z-index: 999;
     
     
   }

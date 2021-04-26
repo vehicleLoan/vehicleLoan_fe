@@ -1,3 +1,13 @@
+<div class="topnav">
+  <ul style="list-style-type: none;">
+    <<img src="../assets/images/LoanLogo.jpg" width="15%" height="75px" class="logo">
+    <li><a [routerLink]="['/userDashboardLink']">Dashboard</a></li>
+    <li>
+        <button class="dropbtn" (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</div>
+<br>
 <div class="nav">
   <button class = "navbar" [routerLink]="['/applyLink']">Personal Details</button>
   <button class = "navbar" [routerLink]="['/employmentDetailsLink']">Employement Details</button>
@@ -23,26 +33,35 @@
         </div><br>
                       
           <label >State Of Purchase</label>
-          <input type="text" #pr="ngModel" [(ngModel)]="cust.vehicleState"  placeholder="Enter State" class="form-control "name="state" required>
+          <input type="text" #pr="ngModel" [(ngModel)]="cust.vehicleState" pattern="^[a-zA-Z]+$" placeholder="Enter State" class="form-control "name="state" required>
           <div *ngIf="pr.invalid && (pr.dirty || pr.touched)" style="color: red; border: red;">
             <div *ngIf="pr.errors.required">
               Enter State Of Purchase
             </div>
+            <div *ngIf="pr.errors.pattern">
+              Invalid State name
+            </div>
           </div><br>
                         
           <label >City Of Purchase</label>
-          <input type="text" #cp="ngModel" [(ngModel)]="cust.vehicleCity" placeholder="Enter City" class="form-control "name="city" required>
+          <input type="text" #cp="ngModel" pattern="^[a-zA-Z]+$"  [(ngModel)]="cust.vehicleCity" placeholder="Enter City" class="form-control "name="city" required>
           <div *ngIf="cp.invalid && (cp.dirty || cp.touched)" style="color: red; border: red;">
             <div *ngIf="cp.errors.required">
               Enter City Of Purchase
             </div>
+            <div *ngIf="cp.errors.pattern">
+              Invalid city name
+            </div>
           </div><br>
     
           <label >Vehicle Make</label>
-          <input type="text" #vm="ngModel" [(ngModel)]="cust.vehicleMake" placeholder="Enter Vehicle Make" class="form-control "name="vehiclemake" required>
+          <input type="text" #vm="ngModel" pattern="^[a-zA-Z]+$"  [(ngModel)]="cust.vehicleMake" placeholder="Enter Vehicle Make" class="form-control "name="vehiclemake" required>
           <div *ngIf="vm.invalid && (vm.dirty || vm.touched)" style="color: red; border: red;">
             <div *ngIf="vm.errors.required">
               Please Enter Required Field
+            </div>
+            <div *ngIf="vm.errors.pattern">
+              Please Enter valid vehicle make
             </div>
           </div><br>
     

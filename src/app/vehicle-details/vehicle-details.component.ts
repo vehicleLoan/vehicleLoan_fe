@@ -29,4 +29,10 @@ export class VehicleDetailsComponent implements OnInit {
     this.router.navigateByUrl("/bankDetailsLink");
   }
 
+  logout(){
+    sessionStorage.removeItem("custId");
+    sessionStorage.removeItem("formDetails");
+    this.router.navigate(['/loginLink']);
+  }
+
 }

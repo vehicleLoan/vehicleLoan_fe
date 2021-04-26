@@ -29,4 +29,11 @@ export class BankDetailsComponent implements OnInit {
     )
     this.router.navigateByUrl("/uploadLink");
   }
+
+
+  logout(){
+    sessionStorage.removeItem("custId");
+    sessionStorage.removeItem("formDetails");
+    this.router.navigate(['/loginLink']);
+  }
 }

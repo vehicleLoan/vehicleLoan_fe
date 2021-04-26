@@ -1,3 +1,14 @@
+<div class="topnav">
+  <ul style="list-style-type: none;">
+    <img src="../assets/images/LoanLogo.jpg" width=15% height="75px" class="logo">
+    <li><a [routerLink]="['/userDashboardLink']">Dashboard</a></li>
+    <li><a [routerLink]="['/applyLink']" >Apply for Loan</a></li>
+    <li>
+        <button class="dropbtn" (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</div>
+<br>
 <div class="nav">
   <button class = "navbar" [routerLink]="['/applyLink']">Personal Details</button>
   <button class = "navbar" [routerLink]="['/employmentDetailsLink']">Employement Details</button>

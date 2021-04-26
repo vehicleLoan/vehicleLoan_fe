@@ -1,27 +1,11 @@
-<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-<header style="background: navy;" class="text-gray-600 body-font">
-  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-      </svg>
-      <span style=" color:white;margin-bottom: 10px;" class="ml-3 text-xl">Loan on Wheels</span>
-    </a>
-    <nav id="helements" class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <a style=" color:white;" [routerLink]="['/userDashboardLink']" class="mr-5 hover:text-gray-900">Home</a>
-      <a style=" color: white;" [routerLink]="['/applyLink']" class="mr-5 hover:text-gray-900">Apply for loan</a>
-    </nav>
-    <button (click)="logout()" class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout
-      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
-        <path d="M5 12h14M12 5l7 7-7 7"></path>
-      </svg>
-    </button>
-  </div>
-</header>
-<hr><hr><hr><hr><hr><hr>
-
-
-
+<div class="topnav">
+  <ul style="list-style-type: none;">
+    <img src="../assets/images/LoanLogo.jpg" width=15% height="75px" class="logo">
+    <li><a [routerLink]="['/userDashboardLink']">Dashboard</a></li>
+    <li><a [routerLink]="['/applyLink']" >Apply for Loan</a></li>
+    <li><button class="dropbtn" (click)="logout()">Logout</button></li>
+  </ul>
+</div>
  <div class="leftbox">
    <div class="sidenav">
   <nav>
@@ -41,20 +25,19 @@
           <a style="font-size: 23px;" (click)="loan()">Loans</a>
         </div>
      </li>
-     <li class="var_nav">
+     <!-- <li class="var_nav">
       <div class="link_bg"></div>
       <div class="link_title">
         <i class="fa fa-calendar" aria-hidden="true"></i>
-        <!-- <i class="fa fa-clock-o" aria-hidden="true"></i> -->
         <a style="font-size: 22.8px;" (click)="scheduler()">Pay EMI</a>
       </div>
-   </li>
+   </li> -->
     </ul>
   </nav>
 </div>
 </div>
   
-
+<br>
 <div class="main">
   <section style="color:navy;">Welcome {{cust.custFirstName}} {{cust.custLastName}},</section>
   
